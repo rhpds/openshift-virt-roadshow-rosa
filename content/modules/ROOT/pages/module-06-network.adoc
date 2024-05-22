@@ -25,7 +25,7 @@ The OpenShift environment has already been configured with an OVS Bridge on each
 In order to use the OVS Bridge with your VM you need to create a *Network Attachment Definition*. This is what tells OpenShift about the network and allows the virtual machines to connect to it. Network Attachment Definitions are specific to the project/namespace they're created in, unless they're created in the *default* project. This gives you, the administrator, the ability to control which networks are and aren't available to users who have access to manage their own VMs. Once the Network Attachment Definition has been created, it can then be used by virtual machines when configuring their network adapters.
 
 [NOTE]
-A network attachment definition instructs openshift to utilise an existing network device. In our case that device was previously created and is named ovs-br1. You must use that name or OpenShift won’t be able to place your VM on any compute nodes as it can only utilise nodes with that specifically named network device on it.
+A network attachment definition instructs openshift to utilise an existing network device. In our case that device was previously created and is named ovs-br. You must use that name or OpenShift won’t be able to place your VM on any compute nodes as it can only utilise nodes with that specifically named network device on it.
 
 How is this done?
 

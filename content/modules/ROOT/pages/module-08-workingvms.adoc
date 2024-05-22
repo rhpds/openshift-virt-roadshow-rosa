@@ -2,7 +2,8 @@
 
 == Introduction
 
-By default, virtual machines are connected to the SDN, which is a convenient and easy way to give them access to the rest of the network, but can be challenging for the virtual machines, and other Pods in the OpenShift cluster, to find and connect to the virtualized applications. To solve this, we will use a `Service` to balance connections across the two Windows-based web servers, and create a DNS entry for each service discovery, then create a `Route` to allow external clients to access the application hosted within the virtual machines.
+This section of our lab is dedicated to the Day-2 operations that many administrators would need to perform when working with virtual machines in their OpenShift Virtualization environment. Often this takes place by creating a load balancer object using a tool like *MetalLB*, and by exposing our application through *Services* and *Routes* to make it reachable from outside of the cluster. In this section we will cover the processes required to work with virtual machines once they are running within OpenShift virtualization 
+
 
 // - Content from configure metalLB and assign IB to database node below
 

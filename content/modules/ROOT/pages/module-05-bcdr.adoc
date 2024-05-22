@@ -4,10 +4,17 @@
 
 There are multiple options for backup and restore of virtual machines with OpenShift Virtualization.
 
-* https://docs.openshift.com/container-platform/4.13/backup_and_restore/application_backup_and_restore/oadp-features-plugins.html[*OADP (OpenShift APIs for Data Protection)*]: A Red Hat Operator which provides a storage agnostic method to back up and restore OpenShift objects, including virtual machines.
-* https://docs.kasten.io/latest/usage/openshift_virtualization.html[*Kasten K10 by Veeam*]
+Native Solutions Include:
+
+* https://docs.openshift.com/container-platform/4.15/backup_and_restore/application_backup_and_restore/oadp-features-plugins.html[*OADP (OpenShift APIs for Data Protection)*]: A Red Hat Operator which provides a storage agnostic method to back up and restore OpenShift objects, including virtual machines.
+* https://access.redhat.com/documentation/en-us/red_hat_openshift_data_foundation/4.15/html/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/metro-dr-solution/[*OpenShift Data Foundation Metro-DR*]
+
+Ecosystem Partner Solutions Include:
+
+* https://portworx.com/blog/disaster-recovery-for-red-hat-openshift-virtualization/[*Portworx Disaster Recovery for OpenShift Virtualization*]
+* https://storware.eu/solutions/virtual-machine-backup-and-recovery/openshift-virtualization-and-kubevirt/[*Storware Backup and Recovery*]
 * https://docs.trilio.io/kubernetes/appendix/backup-and-restore-virtual-machine-running-on-openshift-virtualization[*Trilio for Kubernetes*]
-* https://storware.eu/solutions/containers-backup-and-recovery/red-hat-openshift-backup-restore/[*Storware Backup and Recovery*]
+* https://docs.kasten.io/latest/usage/openshift_virtualization.html[*VEEAM Kasten*]
 
 Additionally, many storage partners offer the ability to protect virtual machine disks using their native technology. Be sure to check with your storage and backup vendor(s) to determine compatibility with OpenShift Virtualization.
 

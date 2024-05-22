@@ -41,8 +41,11 @@ ugh services and routes.
 
 == Version Information
 
-The OpenShift Virtualization Roadshow has been updated to run with the following software versions.
+This edition of the  OpenShift Virtualization Roadshow has been developed using the following software versions.
 
-Red Hat OpenShift 4.15
-Red Hat Migration Toolkit for Virtual Machines 2.6
+* Red Hat OpenShift 4.15.12
+* Red Hat OpenShift Virtualization 4.15.1
+* Red Hat OpenShift Data Foundation 4.15.2
+* Red Hat OADP 1.1.7
+* Red Hat Migration Toolkit for Virtual Machines 2.6.1
 
