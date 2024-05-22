@@ -1,37 +1,39 @@
-= {lab_name}
+= Welcome to the {lab_name} !
 
 [%hardbreaks]
-== Experience Red Hat OpenShift Virtualization:  A Modern Application Platform for Virtual Machines
-
+== Introduction
 OpenShift Virtualization enables you to bring virtual machines onto a modern, Kubernetes-based infrastructure. It enables the development and delivery of new applications as well as the modernization of existing ones and can create applications that consist of virtual machines, containers, and serverless functions - all managed together using Kubernetes-native tools and paradigms.
 
-This lab is a condensed version of our OpenShift Virtualization Roadshow, which we encourage you to attend in a city near you for a more in depth hands-on experience with all the functions of OpenShift Virtualization.
+This roadshow event is organized to allow you to have a hands-on experience with Red Hat OpenShift Virtualization.
 
-In this lab, we will focus primarily on Day 2 management activities that many virtual administrators may encounter in their day to day workflows.
+In this event we will explore many common management activities that virtual administrators often encounter in their day to day workflows.
 
-
-== Who Will Benefit Most from this Lab?
+== Who Will Benefit Most from attending a Roadshow?
 
 *Virtual Machine Administrators* -- Those responsible for day to day management of virtual guests in OpenShift Virtualization. These users will often find themselves responsible for provisioning virtual guests, and day to day management of the guests, and the applications running within.
 
 *Virtual Infrastructure Administrators* -- Those responsible for the physical infrastructure hosting the OpenShift Virtualization solution. These users will be responsible for physical hardware, storage, and networking changes to the environment, that will affect the day to day operations of the running virtual machines.
 
 
-== What Content Is Covered In This Lab?
+== What Content Is Covered In The Roadshow?
 
-These are the six main sections that will be covered:
+These are the *eight* main sections that will be covered:
 
 * _Virtual Machine Management_: In this section we will provide a review of virtual machine management fundamentals, including creating a virtual machine, and modifying it's allotted resources.
 
+* _Migrating Virtual Machines_: In this section, we will use the Migration Toolkit for Virtualization (MTV) to migrate a VM from an existing VMware vSphere environment to OpenShift Virtualization.
+
 * _Bare Metal Infrastructure Management_: In this section, an administrator will learn how to scale their OpenShift environment by adding in an additional worker node to host virtualized workloads.
 
-* _Storage Management_: The storage paradigm familiar to many administrators changes with OpenShift Virtualization, this section will explore many actions related to storage management for VMs.
+* _Storage Management_: The storage paradigm familiar to many administrators changes with OpenShift Virtualization, this section will explore many actions related to storage management for virtual machines.
 
-* _Network Management_: By default VMs are connected to the pod network in OpenShift, in this section we will explore creating new L2 network mappings, and configuring policies for multiple networks.
+* _Backup and Recovery for Virtual Machines_: This unit introduces and demonstrates additional concepts around backing up VMs to external sites and restoring them in the event of a disaster.
 
-* _Template Management_: In order to streamline deployment of virtual machines, administrators will often create templates to ease deployment operations. This section will focus on that process. 
+* _Network Management_: By default VMs are connected to the pod network in OpenShift, in this section we will explore creating new L2 network mappings, and configuring microsegmentation policies for multiple networks.
 
-* _Migrating Virtual Machines_: In this section, we will use the Migration Toolkit for Virtualization (MTV) to migrate a VM from an existing VMware vSphere environment to OpenShift Virtualization.
+* _Template and InstanceType Management_: In order to streamline deployment of virtual machines, administrators will often create Templates or define InstanceTypes to ease deployment operations. This section will focus on those processes. 
+
+* _Working with Virtual Machines_: In this section we will perform several day-2 activities with our imported virtual machines, including setting up a load-balancer, and exposing our VM hosted applications through services and routes.
 
 
 == What is OpenShift Virtualization?

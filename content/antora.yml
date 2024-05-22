@@ -7,7 +7,7 @@ nav:
 
 asciidoc:
   attributes:
-    lab_name: Red Hat Summit 2024
+    lab_name: Red Hat OpenShift Virtualization Roadshow
     release-version: master
     page-pagination: true
     my_var: "foo"
