@@ -2,9 +2,9 @@
 
 == Introduction
 
-There are multiple options for backup and restore of virtual machines with OpenShift Virtualization.
+Data Protection is a major topic of conversation when it comes to any enterprise workload, and there are no shortage of options currently available for backup and recovery of virtual machines with OpenShift Virtualization. Many of these solutions function in the same manner at which they protect pods in OpenShift. They do this by taking a backup of the virtual machine, or a namespace containing multiple virtual machines and store it remotely in an object storage bucket. These backups usually also include the persistent storage volume, alongside the metadata and custom resources that define the virtual machine. 
 
-Native Solutions Include:
+Red Hat Solutions Include:
 
 * https://docs.openshift.com/container-platform/4.15/backup_and_restore/application_backup_and_restore/oadp-features-plugins.html[*OADP (OpenShift APIs for Data Protection)*]: A Red Hat Operator which provides a storage agnostic method to back up and restore OpenShift objects, including virtual machines.
 * https://access.redhat.com/documentation/en-us/red_hat_openshift_data_foundation/4.15/html/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/metro-dr-solution/[*OpenShift Data Foundation Metro-DR*]
@@ -16,50 +16,47 @@ Ecosystem Partner Solutions Include:
 * https://docs.trilio.io/kubernetes/appendix/backup-and-restore-virtual-machine-running-on-openshift-virtualization[*Trilio for Kubernetes*]
 * https://docs.kasten.io/latest/usage/openshift_virtualization.html[*VEEAM Kasten*]
 
-Additionally, many storage partners offer the ability to protect virtual machine disks using their native technology. Be sure to check with your storage and backup vendor(s) to determine compatibility with OpenShift Virtualization.
+INFO: This is not intended to be an exhaustive list of partners offering a supported backup and recovery solution. Please check with your storage or data protection vendor(s) to determine the compatibility of their product with OpenShift Virtualization.
 
-This lab will use OADP to perform a virtual machine backup and restore.
+In this portion of the lab, we will use OADP to perform a virtual machine backup and restore.
 
-.Goals
-* Review Operator 
-* Perform a backup
-* Perform a restore
+[[review_operator]]
+== Review the OADP Operator
 
-== Review Operator
-
-. Navigate in the left menu to *Operators* -> *Installed Operators* and ensure that `All projects` is selected. Select `OADP Operator`.
+. Navigate in the left menu to *Operators* -> *Installed Operators* and ensure that *All projects* is selected. Type *OADP* in the Name search field and you should be presented with the installed version of the *OADP Operator*. Click on the operator to see it's details.
 +
-image::module-05-bcdr/00_Left_Menu.png[]
+image::module-05-bcdr/00_Left_Menu.png[link=self, window=blank, width=100%]
 
-. Review the *Provided APIs* available. In this module, the `Backup` and `Restore` functions will be used.
+. Review the *Provided APIs* available. In this module, the *Backup* and *Restore* functions will be used.
 +
-image::module-05-bcdr/01_Overview.png[]
+image::module-05-bcdr/01_Overview.png[link=self, window=blank, width=100%]
 
-. Navigate to the tab *DataProtectionApplication*. This object represents the configuration of the deployed OADP instance.
+. Use the horizontal scrollbar at the top to navigate to the tab *DataProtectionApplication*. This object represents the configuration of the deployed OADP instance.
 +
-image::module-05-bcdr/02_DPA.png[]
+image::module-05-bcdr/02_DPA.png[link=self, window=blank, width=100%]
 
-. Select `oadp-dpa` and review the _YAML_ definition
+. Click on *oadp-dpa* to see the details of the _DataProtectionApplication_ and then click on the *YAML* button at the top to see how it is configured. 
 +
-image::module-05-bcdr/03_OADP_YAML.png[]
+image::module-05-bcdr/03_OADP_YAML.png[link=self, window=blank, width=100%]
 +
-Notice that *OADP* has been configured by adding the `kubevirt` plugin and it has been configured to use the internal object storage bucket provided by *Red Hat Storage*.
+Notice that *OADP* has been configured by adding the *kubevirt* plugin and it has been configured to use the internal object storage bucket provided by *Red Hat OpenShift Data Foundation.
+
+IMPORTANT: For the sake of convenience our lab is setup to perform the backups to a local object bucket, however in a production environment you would want to ensure that backups are directed to an external storage system, or a cloud-based object storage bucket.
+
+[[create_backup]]
+== Create a Virtual Machine Backup
+
+You now will perform a backup of the VM *fedora02* which we created in the previous section. The selection of the objects to be backed up is defined by the labels *app* and *vm.kubevirt.io/name*. This includes the VM definition, disks, and additional objects being used by the virtual machine such as config maps and secrets.
+
+. Using the horizontal scrollbar, scroll back until you see the *Backup* tab.
+
+. Click on the *Backup* tab and press the *Create Backup* button.
 +
-In a production environment you would want to backup to an external storage system, however, in this lab, we are using internal object storage for the sake of convenience.
+image::module-05-bcdr/04_Backup_Tab.png[link=self, window=blank, width=100%]
 
-== Create a backup
-
-You will perform a backup of the VM `fedora02`. The selection of the objects to be backed up is defined by the labels `app` and `vm.kubevirt.io/name`. This includes the VM definition, disks, and additional objects being used by the virtual machine such as config maps and secrets.
-
-. Go back one screen to the main Operator page by clicking on the Operator name
-
-. Navigate to the *Backup* tab and press *Create Backup*
+. Switch to the _YAML view_ and replace the default content with the following one:
 +
-image::module-05-bcdr/04_Backup_Tab.png[]
-
-. Switch to the _YAML view_ and replace the content with the following one:
-+
-[source,yaml]
+[source,yaml, role=execute]
 ----
 apiVersion: velero.io/v1
 kind: Backup
@@ -80,26 +77,38 @@ spec:
   storageLocation: oadp-dpa-1
   ttl: 720h0m0s
 ----
+
+image::module-05-bcdr/05_Create_Backup_YAML.png[link=self, window=blank, width=100%]
 +
-Notice that the content of this YAML indicates that any object with the labels `app: fedora02` in the namespace `vmexamples` will be backed up to the location specified in the `DataProtectionApplication` configuration.
+. Click the *Create* button at the bottom.
+
 +
-[IMPORTANT]
-If you do not have the `fedora02` VM, change the label selectors in the YAML above to match a virtual machine in your environment.
-
-
-. Wait till the `Status` column changes to `Completed`. This indicates that the virtual machine has been successfully backed up.
+Note that the content of this YAML indicates that any object with the labels *app: fedora02* in the namespace *vmexamples* will be backed up to the location specified in the *DataProtectionApplication* configuration.
 +
-image::module-05-bcdr/05_Backup_Completed.png[]
+image::module-05-bcdr/05_Create_Backup_YAML.png[link=self, window=blank, width=100%]
++
+NOTE: If you did not complete the previous storage section, and you do not have the *fedora02* VM, change the label selectors in the YAML above to match a virtual machine in your inventory.
 
-== Restore a backup
+. Wait until the *Status* column changes to *Completed*. This indicates that the virtual machine has been successfully backed up.
++
+image::module-05-bcdr/05_Backup_Completed.png[link=self, window=blank, width=100%]
 
-. Navigate to *Virtualization* -> *VirtualMachines* and delete the VM `fedora02`.
+[[restore_backup]]
+== Restore From a Backup
 
+. Navigate to *Virtualization* -> *VirtualMachines*, click on the three-dot menu to the right of the *fedora02* VM and select *Delete* from the menu that appears.
++
+image::module-05-bcdr/07_Delete_VM.png[link=self, window=blank, width=100%]
++
+. When prompted, click the red *Delete* button to confirm deleting the virtual machine.
++
+image::module-05-bcdr/08_Confirm_Delete.png[link=self, window=blank, width=100%]
++
 . Go back to *Operators* -> *Installed Operators* and select *OADP Operator*. 
 
-. Switch to the *Restore* tab and press *Create Restore*
+. Use the horizontal navigation bar to locate the the *Restore* tab, click the *Restore* tab, and then press *Create Restore*.
 +
-image::module-05-bcdr/06_Restore_Tab.png[]
+image::module-05-bcdr/09_Restore_Tab.png[link=self, window=blank, width=100%]
 
 . Switch to the YAML view and replace the content with the following one:
 +
@@ -121,14 +130,18 @@ spec:
   - restores.velero.io
   restorePVs: true
 ----
-
-. Wait till the `Status` column changes to `Completed`.
 +
-image::module-05-bcdr/07_Restore_Completed.png[]
-
-. Navigate back to *Virtualization* -> *Virtual Machines* and ensure the `fedora02` was restored.
+image::module-05-bcdr/10_Create_Restore_YAML.png[link=self, window=blank, width=100%]
 +
-image::module-05-bcdr/08_VM_Restored.png[]
+. Press the *Create* button at the bottom.
+
+. Wait until you see that the *Status* column changes to *Completed*.
++
+image::module-05-bcdr/11_Restore_Completed.png[link=self, window=blank, width=100%]
+
+. Navigate back to *Virtualization* -> *Virtual Machines* and confirm that the *fedora02* virtual machine was restored.
++
+image::module-05-bcdr/02_VM_Restored.png[link=self, window=blank, width=100%]
 
 
 == Summary 

@@ -2,11 +2,14 @@
 
 == Introduction
 
-In this lab, you will review the physical environment used during this workshop, including an overview of OpenShift deployed to bare metal hosts. This environment runs on bare metal hosts in the Equinix cloud. This review will help provide you with an understanding of how the nodes are configured in the cluster, and what their current hardware capabilities are. You will then be tasked with adding an additional machine and scaling the number of cluster nodes using the Red Hat OpenShift web console.
+In this portion of the lablab, you will review the physical environment used during this workshop, including an overview of OpenShift deployed to bare metal hosts. This environment runs on bare metal hosts in the Equinix cloud. This review will help provide you with an understanding of how the nodes are configured in the cluster, and what their current hardware capabilities are. You will then be tasked with adding an additional machine and scaling the number of cluster nodes using the Red Hat OpenShift web console.
 
-.Goals
-* Explore the nodes and machines in your *Red Hat OpenShift Container Platform* cluster
-* Scale the baremetal cluster using the web console
+.*Goals*
+
+* Explore the requirements for clusters running OpenShift Virtualization
+* Review the physical characteristics of the lab cluster.
+* Discover a new baremetal machine, and use it to scale the cluster.
+
 
 === Supported Platforms
 
@@ -162,7 +165,7 @@ image::module-03-baremetal/13_Machine_Count_3_4.png[link=self, window=blank, wid
 +
 . Next, click on the *Machines* button on the left under *Compute* to see a list of all the machines, and you should see worker4 in the *Provisioning* state. 
 +
-NOTE: This step can take a few minutes to complete, as the node reboots several times during the installation process. Please be patient.
+NOTE: This step can take a few minutes to complete, as the node reboots several times during the installation process, please feel free to continue with next roadshow module and come back and check on the status of this step at your leisure.
 +
 image::module-03-baremetal/14_Worker_4_Provisioning.png[link=self, window=blank, width=100%]
 +

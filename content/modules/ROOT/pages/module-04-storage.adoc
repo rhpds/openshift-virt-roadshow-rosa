@@ -142,8 +142,16 @@ image::module-04-storage/18_VM_Clone_Dialog.png[link=self, window=blank, width=1
 +
 image::module-04-storage/19_VM_Cloned.png[link=self, window=blank, width=100%]
 +
-[IMPORTANT]
-The cloned VM will have the same identity as the source VM, which may cause conflicts with applications and other clients interacting with the VM. Use caution when cloning a VM connected to an external network or in the same project.
+
+IMPORTANT: The cloned VM will have the same identity as the source VM, which may cause conflicts with applications and other clients interacting with the VM. Use caution when cloning a VM connected to an external network or in the same project.
++
+
+. Click on the *YAML* menu at the top of the screen, you will see that the name of the VM is *fedora02*, however there are labels that remain from the *fedora01* source VM that will need to be manually updated.
++
+image::module-04-storage/20_Cloned_VM_YAML.png[link=self, window=blank, width=100%]
++
+. Modify the the *app* and *kubevirt.io/domain* values in the YAML so that they are set to *fedora02* then click the *Save* button at the bottom, this will allow us to work with this VM in future modules much more easily.
+
 
 == Summary
 

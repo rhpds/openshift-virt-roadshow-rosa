@@ -23,6 +23,9 @@
 ** xref:module-04-storage.adoc#clone_vm[Clone a Virtual Machine]
 
 * xref:module-05-bcdr.adoc[5. Backup and Recovery for Virtual Machines]
+* xref:module-05-bcdr.adoc#review_operator[Review the OADP Operator]
+* xref:module-05-bcdr.adoc#create_backup[Create a Virtual Machine Backup]
+* xref:module-05-bcdr.adoc#restore_backup[Restore From a Backup]
 
 * xref:module-06-network.adoc[6. Network Management]
 ** xref:module-06-network.adoc#create_netattach[Create a Network Attachment Definition]
