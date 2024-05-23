@@ -141,7 +141,7 @@ image::module-05-bcdr/11_Restore_Completed.png[link=self, window=blank, width=10
 
 . Navigate back to *Virtualization* -> *Virtual Machines* and confirm that the *fedora02* virtual machine was restored.
 +
-image::module-05-bcdr/02_VM_Restored.png[link=self, window=blank, width=100%]
+image::module-05-bcdr/12_VM_Restored.png[link=self, window=blank, width=100%]
 
 
 == Summary 
