@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Migrating Virtual Machines :: Experience Red Hat OpenShift Virtualization</title>
-    <link rel="prev" href="module-04.html">
+    <link rel="prev" href="module-01-intro.html">
+    <link rel="next" href="module-03-baremetal.html">
     <meta name="generator" content="Antora 3.1.7">
 <link rel="stylesheet" href="../_/css/site.css"><link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -41,85 +42,28 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-00.html">1. Virtual Machine Management </a>
+    <a class="nav-link" href="module-01-intro.html">1. Virtual Machine Management </a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-00.html#create_project">Create a New Project</a>
+    <a class="nav-link" href="module-01-intro.html#create_project">Create a New Project</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-00.html#create_vm">Create a Linux Virtual Machine</a>
+    <a class="nav-link" href="module-01-intro.html#create_vm">Create a Linux Virtual Machine</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-00.html#admin_vms">Administering Virtual Machines</a>
+    <a class="nav-link" href="module-01-intro.html#admin_vms">Administering Virtual Machines</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-00.html#vm_state">Controlling Virtual Machine State</a>
+    <a class="nav-link" href="module-01-intro.html#vm_state">Controlling Virtual Machine State</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-00.html#live_migrate">Live Migrate a Virtual Machine</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-01.html">2. Bare Metal Management </a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-01.html#review_nodes">Review Nodes and Machines</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-01.html#review_hosts">Review Bare Metal Hosts</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-01.html#scaling_cluster">Scaling the Cluster with a New Bare Metal Host</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-02.html">3. Storage Management</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-02.html#examine_pvc">Examine the PVC for a VM</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-02.html#managing_snapshots">Managing Snapshots</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-02.html#clone_vm">Clone a Virtual Machine</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-03.html">4. Network Management</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-03.html#create_netattach">Create a Network Attachment Definition</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-03.html#connect_external_net">Connect a Virtual Machine to an External Network</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-03.html#multinetwork_policy">Using a Multinetwork Policy</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-04.html">5. Template Management</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-04.html#clone_customize_template">Clone and Customize a Template</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-04.html#create_win">Create a Windows VM Template</a>
+    <a class="nav-link" href="module-01-intro.html#live_migrate">Live Migrate a Virtual Machine</a>
   </li>
 </ul>
   </li>
   <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-05.html">6. Migrating Virtual Machines</a>
+    <a class="nav-link" href="module-02-mtv.html">2. Migrating Existing Virtual Machines</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="#prerequisites">Prerequisites for Migrations</a>
@@ -128,6 +72,81 @@
     <a class="nav-link" href="#migrating_vms">Migrating Virtual Machines from VMware</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="module-03-baremetal.html">3. Bare Metal Management </a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-03-baremetal.html#review_nodes">Review Nodes and Machines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-03-baremetal.html#review_hosts">Review Bare Metal Hosts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-03-baremetal.html#scaling_cluster">Scaling the Cluster with a New Bare Metal Host</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="module-04-storage.html">4. Storage Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-04-storage.html#examine_pvc">Examine the PVC for a VM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-04-storage.html#managing_snapshots">Managing Snapshots</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-04-storage.html#clone_vm">Clone a Virtual Machine</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="module-05-bcdr.html">5. Backup and Recovery for Virtual Machines</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-05-bcdr.html#review_operator">Review the OADP Operator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-05-bcdr.html#create_backup">Create a Virtual Machine Backup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-05-bcdr.html#restore_backup">Restore From a Backup</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="module-06-network.html">6. Network Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-06-network.html#create_netattach">Create a Network Attachment Definition</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-06-network.html#connect_external_net">Connect a Virtual Machine to an External Network</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-06-network.html#multinetwork_policy">Using a Multinetwork Policy</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="module-07-tempinst.html">7. Template and InstanceType Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-07-tempinst.html#clone_customize_template">Clone and Customize a Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-07-tempinst.html#create_win">Create a Windows VM Template</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="module-08-workingvms.html">8. Working with Virtual Machines</a>
   </li>
 </ul>
   </li>
@@ -159,7 +178,7 @@
   <a href="index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="module-05.html">6. Migrating Virtual Machines</a></li>
+    <li><a href="module-02-mtv.html">2. Migrating Existing Virtual Machines</a></li>
   </ul>
 </nav>
 </div>
@@ -210,6 +229,23 @@ The migration toolkit has already been deployed to your cluster using the Operat
 </li>
 <li>
 <p><a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_virtualization/2.6/html/installing_and_using_the_migration_toolkit_for_virtualization/prerequisites_mtv#vmware-prerequisites_mtv" target="_blank" rel="noopener">VMware vSphere</a></p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title"><strong>Goals</strong></div>
+<ul>
+<li>
+<p>Explore the VMware vSphere environment</p>
+</li>
+<li>
+<p>Review the configuration for the Migration Toolkit for Virtualization (MTV)</p>
+</li>
+<li>
+<p>Create a Migration Plan</p>
+</li>
+<li>
+<p>Migrate VMs into OpenShift Virtualization</p>
 </li>
 </ul>
 </div>
@@ -321,7 +357,7 @@ You will not need to migrate the HAproxy (load balancer) VM because OpenShift ha
 <p>By default you&#8217;ll land in the <strong>Inventory</strong> view at the top of the navigation tree. Click the <strong>Workloads</strong> icon and expand the navigation tree until you see the folder that matches your username, and the 4 VMs under it. Click the <strong>VMs</strong> tab at the top of the screen to view the VM details.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-05/00_Workload_VM_List.png" target="blank"><img src="_images/module-05/00_Workload_VM_List.png" alt="00 Workload VM List" width="100%"></a>
+<a class="image" href="_images/module-02-mtv/00_Workload_VM_List.png" target="blank"><img src="_images/module-02-mtv/00_Workload_VM_List.png" alt="00 Workload VM List" width="100%"></a>
 </div>
 </div>
 </li>
@@ -329,7 +365,7 @@ You will not need to migrate the HAproxy (load balancer) VM because OpenShift ha
 <p>Change to the <strong>Networks</strong> view, then expand the tree to view the port group used by the virtual machines. Note that the name is <strong>segment-migrating-to-ocpvirt</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-05/01_vSphere_Network.png" target="blank"><img src="_images/module-05/01_vSphere_Network.png" alt="01 vSphere Network" width="100%"></a>
+<a class="image" href="_images/module-02-mtv/01_vSphere_Network.png" target="blank"><img src="_images/module-02-mtv/01_vSphere_Network.png" alt="01 vSphere Network" width="100%"></a>
 </div>
 </div>
 </li>
@@ -337,7 +373,7 @@ You will not need to migrate the HAproxy (load balancer) VM because OpenShift ha
 <p>Finally, review the datastores in use by browsing to the <strong>Datastores</strong> view. Expand the tree to see the datastores that are attached to the <strong>SDDC-Datacenter</strong>, and optionally browse to the <strong>VMs</strong> sub-tab to view the capacity used by each virtual machine.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-05/02_vSphere_Datastore.png" target="blank"><img src="_images/module-05/02_vSphere_Datastore.png" alt="02 vSphere Datastore" width="100%"></a>
+<a class="image" href="_images/module-02-mtv/02_vSphere_Datastore.png" target="blank"><img src="_images/module-02-mtv/02_vSphere_Datastore.png" alt="02 vSphere Datastore" width="100%"></a>
 </div>
 </div>
 </li>
@@ -358,7 +394,7 @@ You will not need to migrate the HAproxy (load balancer) VM because OpenShift ha
 <p>Select project <strong>openshift-mtv</strong></p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-05/03_MTV_Providers.png" target="blank"><img src="_images/module-05/03_MTV_Providers.png" alt="03 MTV Providers" width="100%"></a>
+<a class="image" href="_images/module-02-mtv/03_MTV_Providers.png" target="blank"><img src="_images/module-02-mtv/03_MTV_Providers.png" alt="03 MTV Providers" width="100%"></a>
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -378,7 +414,7 @@ MTV 2.4 and later are project/namespace aware and do not require administrator p
 <p>By default, there is a provider called <strong>host</strong> which represents <strong>OpenShift Virtualization</strong> as a target platform.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-05/04_MTV_Provider_List.png" target="blank"><img src="_images/module-05/04_MTV_Provider_List.png" alt="04 MTV Provider List" width="100%"></a>
+<a class="image" href="_images/module-02-mtv/04_MTV_Provider_List.png" target="blank"><img src="_images/module-02-mtv/04_MTV_Provider_List.png" alt="04 MTV Provider List" width="100%"></a>
 </div>
 </div>
 </li>
@@ -399,7 +435,7 @@ MTV 2.4 and later are project/namespace aware and do not require administrator p
 <p>Navigate in the left menu to <strong>Migration</strong> &#8594; <strong>Plans for virtualization</strong> and press <strong>Create plan</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-05/14_Create_VMWARE_Plan.png" target="blank"><img src="_images/module-05/14_Create_VMWARE_Plan.png" alt="14 Create VMWARE Plan" width="100%"></a>
+<a class="image" href="_images/module-02-mtv/14_Create_VMWARE_Plan.png" target="blank"><img src="_images/module-02-mtv/14_Create_VMWARE_Plan.png" alt="14 Create VMWARE Plan" width="100%"></a>
 </div>
 </div>
 </li>
@@ -407,7 +443,7 @@ MTV 2.4 and later are project/namespace aware and do not require administrator p
 <p>You will be asked to select the source provider that you intend to migrate from. Click on the <strong>VMware</strong> tile.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-05/16_VMware_Source_Provider.png" target="blank"><img src="_images/module-05/16_VMware_Source_Provider.png" alt="16 VMware Source Provider" width="100%"></a>
+<a class="image" href="_images/module-02-mtv/16_VMware_Source_Provider.png" target="blank"><img src="_images/module-02-mtv/16_VMware_Source_Provider.png" alt="16 VMware Source Provider" width="100%"></a>
 </div>
 </div>
 </li>
@@ -431,7 +467,7 @@ MTV 2.4 and later are project/namespace aware and do not require administrator p
 <p>Click <strong>Next</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-05/17_VM_Select_VMWARE_Plan.png" target="blank"><img src="_images/module-05/17_VM_Select_VMWARE_Plan.png" alt="17 VM Select VMWARE Plan" width="100%"></a>
+<a class="image" href="_images/module-02-mtv/17_VM_Select_VMWARE_Plan.png" target="blank"><img src="_images/module-02-mtv/17_VM_Select_VMWARE_Plan.png" alt="17 VM Select VMWARE Plan" width="100%"></a>
 </div>
 </div>
 </li>
@@ -473,7 +509,7 @@ Both the Network and Storage map will automatically detect the Network and Datas
 <p>Click <strong>Create migration plan</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-05/18_Create_Migration_Plan.png" target="blank"><img src="_images/module-05/18_Create_Migration_Plan.png" alt="18 Create Migration Plan" width="100%"></a>
+<a class="image" href="_images/module-02-mtv/18_Create_Migration_Plan.png" target="blank"><img src="_images/module-02-mtv/18_Create_Migration_Plan.png" alt="18 Create Migration Plan" width="100%"></a>
 </div>
 </div>
 </li>
@@ -481,7 +517,7 @@ Both the Network and Storage map will automatically detect the Network and Datas
 <p>You will be taken to a new screen where you will see that the plan for migration is being made ready.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-05/19_Migration_Plan_Unready.png" target="blank"><img src="_images/module-05/19_Migration_Plan_Unready.png" alt="19 Migration Plan Unready" width="100%"></a>
+<a class="image" href="_images/module-02-mtv/19_Migration_Plan_Unready.png" target="blank"><img src="_images/module-02-mtv/19_Migration_Plan_Unready.png" alt="19 Migration Plan Unready" width="100%"></a>
 </div>
 </div>
 </li>
@@ -489,7 +525,7 @@ Both the Network and Storage map will automatically detect the Network and Datas
 <p>After a few moments the plan will become <strong>Ready</strong>, click on the green "Play" button in the center of the window to start the migration process.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-05/20_Migration_Plan_Ready.png" target="blank"><img src="_images/module-05/20_Migration_Plan_Ready.png" alt="20 Migration Plan Ready" width="100%"></a>
+<a class="image" href="_images/module-02-mtv/20_Migration_Plan_Ready.png" target="blank"><img src="_images/module-02-mtv/20_Migration_Plan_Ready.png" alt="20 Migration Plan Ready" width="100%"></a>
 </div>
 </div>
 </li>
@@ -497,7 +533,7 @@ Both the Network and Storage map will automatically detect the Network and Datas
 <p>You will be presented with a confirmation box to begin the migration, click on the <strong>Start</strong> button.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-05/21_Confirm_Migrate_Start.png" target="blank"><img src="_images/module-05/21_Confirm_Migrate_Start.png" alt="21 Confirm Migrate Start" width="100%"></a>
+<a class="image" href="_images/module-02-mtv/21_Confirm_Migrate_Start.png" target="blank"><img src="_images/module-02-mtv/21_Confirm_Migrate_Start.png" alt="21 Confirm Migrate Start" width="100%"></a>
 </div>
 </div>
 </li>
@@ -505,7 +541,7 @@ Both the Network and Storage map will automatically detect the Network and Datas
 <p>A progress bar will appear in the center of the screen along with the status of <strong>0 of 3 VMs migrated</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-05/22_VMs_Migrating.png" target="blank"><img src="_images/module-05/22_VMs_Migrating.png" alt="22 VMs Migrating" width="100%"></a>
+<a class="image" href="_images/module-02-mtv/22_VMs_Migrating.png" target="blank"><img src="_images/module-02-mtv/22_VMs_Migrating.png" alt="22 VMs Migrating" width="100%"></a>
 </div>
 </div>
 </li>
@@ -513,7 +549,7 @@ Both the Network and Storage map will automatically detect the Network and Datas
 <p>Click on the <strong>0 of 3 VMs migrated</strong> link and you will be presented with a page with more details about the migration process.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-05/23_VMs_Migrating_Details.png" target="blank"><img src="_images/module-05/23_VMs_Migrating_Details.png" alt="23 VMs Migrating Details" width="100%"></a>
+<a class="image" href="_images/module-02-mtv/23_VMs_Migrating_Details.png" target="blank"><img src="_images/module-02-mtv/23_VMs_Migrating_Details.png" alt="23 VMs Migrating Details" width="100%"></a>
 </div>
 </div>
 </li>
@@ -521,7 +557,7 @@ Both the Network and Storage map will automatically detect the Network and Datas
 <p>You can click the drop-down arrow next to the name of each VM being migrated to get additional details about the stages of the migration process.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-05/24_VM_Migration_Stages.png" target="blank"><img src="_images/module-05/24_VM_Migration_Stages.png" alt="24 VM Migration Stages" width="100%"></a>
+<a class="image" href="_images/module-02-mtv/24_VM_Migration_Stages.png" target="blank"><img src="_images/module-02-mtv/24_VM_Migration_Stages.png" alt="24 VM Migration Stages" width="100%"></a>
 </div>
 </div>
 <div class="admonitionblock important">
@@ -531,7 +567,7 @@ Both the Network and Storage map will automatically detect the Network and Datas
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Having many participants performing the same task in parallel can cause this task to perform slower than in a real environment. For the Red Hat Summit Lab instance we have limited the number of in-flight VMs to 1 at a time. Please be patient with this process.
+Having many participants performing the same task in parallel in a simulated lab environment can cause this task to perform much slower than in a real environment. For this lab instance we have limited the number of in-flight VMs to 1 at a time. Please be patient with this process as it completes. You may continue with other sections in the roadshow as the migrations complete.
 </td>
 </tr>
 </table>
@@ -541,7 +577,7 @@ Having many participants performing the same task in parallel can cause this tas
 <p>After several minutes the migration has completed.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-05/25_Completed_VMWARE_Plan.png" target="blank"><img src="_images/module-05/25_Completed_VMWARE_Plan.png" alt="25 Completed VMWARE Plan" width="100%"></a>
+<a class="image" href="_images/module-02-mtv/25_Completed_VMWARE_Plan.png" target="blank"><img src="_images/module-02-mtv/25_Completed_VMWARE_Plan.png" alt="25 Completed VMWARE Plan" width="100%"></a>
 </div>
 </div>
 </li>
@@ -578,7 +614,8 @@ Having many participants performing the same task in parallel can cause this tas
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="module-04.html" class="query-params-link">5. Template Management</a></span>
+  <span class="prev"><a href="module-01-intro.html" class="query-params-link">1. Virtual Machine Management </a></span>
+  <span class="next"><a href="module-03-baremetal.html" class="query-params-link">3. Bare Metal Management </a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

@@ -315,6 +315,44 @@ image::module-07-tempinst/28_Clone_Windows_PVC.png[link=self, window=blank, widt
 +
 image::module-07-tempinst/29_Windows_Template.png[link=self, window=blank, width=100%]
 
+[[instance_types]]
+== Introduction to Instance Types
+
+In order to simplify the deployment process for virtual machines, starting with OpenShift 4.14 the default configuration mechanism was changed to emphasize the use of *Instance Types*. An instance type is a reusable object where you can define resources and characteristics to apply to a new VM. You can define custom instance types or use the variety that are included when you install OpenShift Virtualization when provisioning your own VM. This section explores provisioning a VM using an instance type.
+
+. To get started click on *Virtualization* -> *Catalog* on the left-side menu. You will see the default catalog item is *InstanceType*.
++
+image::module-07-tempinst/30_Left_Menu_Catalog.png[link=self, window=blank, width=100%]
++
+. The first step to using an instance type is to select a volume to boot from. Similar to the templates that provide boot sources, those boot sources are available to use for an instance type, or you can upload your own with the *Add volume* button. 
+
+. Click on *rhel9* to create a VM with that boot source.
++
+image::module-07-tempinst/31_Volume_Boot.png[link=self, window=blank, width=100%]
++
+. Next you can select the instance type you would like to use. There are Red Hat provided instance types by default, or you can create your own. If you hover over a provided instance type you can see a description of it's intended use.
++
+image::module-07-tempinst/32_Select_InstanceType.png[link=self, window=blank, width=100%]
++
+* The Red Hat provided instance types are intended for the following uses:
+** cx1: Intended for compute intensive workloads
+** u1: The most general and "universal" workloads
+** gn1: Dedicated for VMs making use of the nVidia GPU operator.
+** n1: Designed for network intensive workloads like VNF
+** m1: Designed for memory intensive workloads.
++
+. Click on the *U series* tile to see a dropdown list of defined resources for general instance types. The default option here is *medium: 1 CPUs, 4 GiB Memory*. Select it.
++
+image::module-07-tempinst/33_InstanceType_Resources.png[link=self, window=blank, width=100%]
++
+. The last section that needs to be completed to provision using an instance type is similar to the template section. You need to provide a name for the virtual machine, and select the storage class to be used for a backing disk. By default, a name will be generated for the VM, and the default virtualization storage class will be selected. When you are satisfied, click the *Create VirtualMachine* button.
++
+image::module-07-tempinst/34_VM_Details.png[link=self, window=blank, width=100%]
++
+. You will be directed to the virtual machine overview page, and see that the VM provisioned using an instance type is now up and running.
++
+image::module-07-tempinst/35_VM_Overview.png[link=self, window=blank, width=100%] 
+
 == Summary
 
-In this section we learned how to clone and customize and existing template to create one that can be used for specific workloads like databases. We also learned how to configure one of the existing Windows templates that exists without a boot source, and automate it's installation process, so we can create future templates by cloning the installation PVC that is created with that VM.
+In this section we learned how to clone and customize and existing template to create one that can be used for specific workloads like databases. We also learned how to configure one of the existing Windows templates that exists without a boot source, and automate it's installation process, so we can create future templates by cloning the installation PVC that is created with that VM. We also introduced how to make use of instance types to further customize our virtual machines for specific workloads.

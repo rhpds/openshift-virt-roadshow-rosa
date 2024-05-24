@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Network Management :: Experience Red Hat OpenShift Virtualization</title>
-    <link rel="prev" href="module-02.html">
-    <link rel="next" href="module-04.html">
+    <link rel="prev" href="module-05-bcdr.html">
+    <link rel="next" href="module-07-tempinst.html">
     <meta name="generator" content="Antora 3.1.7">
 <link rel="stylesheet" href="../_/css/site.css"><link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -42,58 +42,85 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-00.html">1. Virtual Machine Management </a>
+    <a class="nav-link" href="module-01-intro.html">1. Virtual Machine Management </a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-00.html#create_project">Create a New Project</a>
+    <a class="nav-link" href="module-01-intro.html#create_project">Create a New Project</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-00.html#create_vm">Create a Linux Virtual Machine</a>
+    <a class="nav-link" href="module-01-intro.html#create_vm">Create a Linux Virtual Machine</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-00.html#admin_vms">Administering Virtual Machines</a>
+    <a class="nav-link" href="module-01-intro.html#admin_vms">Administering Virtual Machines</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-00.html#vm_state">Controlling Virtual Machine State</a>
+    <a class="nav-link" href="module-01-intro.html#vm_state">Controlling Virtual Machine State</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-00.html#live_migrate">Live Migrate a Virtual Machine</a>
+    <a class="nav-link" href="module-01-intro.html#live_migrate">Live Migrate a Virtual Machine</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-01.html">2. Bare Metal Management </a>
+    <a class="nav-link" href="module-02-mtv.html">2. Migrating Existing Virtual Machines</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-01.html#review_nodes">Review Nodes and Machines</a>
+    <a class="nav-link" href="module-02-mtv.html#prerequisites">Prerequisites for Migrations</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-01.html#review_hosts">Review Bare Metal Hosts</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-01.html#scaling_cluster">Scaling the Cluster with a New Bare Metal Host</a>
+    <a class="nav-link" href="module-02-mtv.html#migrating_vms">Migrating Virtual Machines from VMware</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-02.html">3. Storage Management</a>
+    <a class="nav-link" href="module-03-baremetal.html">3. Bare Metal Management </a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-02.html#examine_pvc">Examine the PVC for a VM</a>
+    <a class="nav-link" href="module-03-baremetal.html#review_nodes">Review Nodes and Machines</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-02.html#managing_snapshots">Managing Snapshots</a>
+    <a class="nav-link" href="module-03-baremetal.html#review_hosts">Review Bare Metal Hosts</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-02.html#clone_vm">Clone a Virtual Machine</a>
+    <a class="nav-link" href="module-03-baremetal.html#scaling_cluster">Scaling the Cluster with a New Bare Metal Host</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="module-04-storage.html">4. Storage Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-04-storage.html#examine_pvc">Examine the PVC for a VM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-04-storage.html#managing_snapshots">Managing Snapshots</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-04-storage.html#clone_vm">Clone a Virtual Machine</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="module-05-bcdr.html">5. Backup and Recovery for Virtual Machines</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-05-bcdr.html#review_operator">Review the OADP Operator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-05-bcdr.html#create_backup">Create a Virtual Machine Backup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-05-bcdr.html#restore_backup">Restore From a Backup</a>
   </li>
 </ul>
   </li>
   <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-03.html">4. Network Management</a>
+    <a class="nav-link" href="module-06-network.html">6. Network Management</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="#create_netattach">Create a Network Attachment Definition</a>
@@ -108,27 +135,18 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-04.html">5. Template Management</a>
+    <a class="nav-link" href="module-07-tempinst.html">7. Template and InstanceType Management</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-04.html#clone_customize_template">Clone and Customize a Template</a>
+    <a class="nav-link" href="module-07-tempinst.html#clone_customize_template">Clone and Customize a Template</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-04.html#create_win">Create a Windows VM Template</a>
+    <a class="nav-link" href="module-07-tempinst.html#create_win">Create a Windows VM Template</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-05.html">6. Migrating Virtual Machines</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-05.html#prerequisites">Prerequisites for Migrations</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-05.html#migrating_vms">Migrating Virtual Machines from VMware</a>
-  </li>
-</ul>
+    <a class="nav-link" href="module-08-workingvms.html">8. Working with Virtual Machines</a>
   </li>
 </ul>
   </li>
@@ -160,7 +178,7 @@
   <a href="index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="module-03.html">4. Network Management</a></li>
+    <li><a href="module-06-network.html">6. Network Management</a></li>
   </ul>
 </nav>
 </div>
@@ -227,7 +245,7 @@ The OpenShift environment has already been configured with an OVS Bridge on each
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-A network attachment definition instructs openshift to utilise an existing network device. In our case that device was previously created and is named ovs-br1. You must use that name or OpenShift won’t be able to place your VM on any compute nodes as it can only utilise nodes with that specifically named network device on it.
+A network attachment definition instructs openshift to utilise an existing network device. In our case that device was previously created and is named ovs-br. You must use that name or OpenShift won’t be able to place your VM on any compute nodes as it can only utilise nodes with that specifically named network device on it.
 </td>
 </tr>
 </table>
@@ -244,7 +262,7 @@ A network attachment definition instructs openshift to utilise an existing netwo
 <p>Navigate to <strong>Networking</strong> &#8594; <strong>Network Attachment Definitions</strong> and click <strong>Create network attachment definition</strong>:</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-03/01_NAD_Dashboard.png" target="blank"><img src="_images/module-03/01_NAD_Dashboard.png" alt="01 NAD Dashboard" width="100%"></a>
+<a class="image" href="_images/module-06-network/01_NAD_Dashboard.png" target="blank"><img src="_images/module-06-network/01_NAD_Dashboard.png" alt="01 NAD Dashboard" width="100%"></a>
 </div>
 </div>
 </li>
@@ -252,7 +270,7 @@ A network attachment definition instructs openshift to utilise an existing netwo
 <p>Click the <strong>Edit YAML</strong> button at the top of the page.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-03/02_NAD_Create.png" target="blank"><img src="_images/module-03/02_NAD_Create.png" alt="02 NAD Create" width="100%"></a>
+<a class="image" href="_images/module-06-network/02_NAD_Create.png" target="blank"><img src="_images/module-06-network/02_NAD_Create.png" alt="02 NAD Create" width="100%"></a>
 </div>
 </div>
 </li>
@@ -280,7 +298,7 @@ spec:
 </div>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-03/03_NAD_YAML.png" target="blank"><img src="_images/module-03/03_NAD_YAML.png" alt="03 NAD YAML" width="100%"></a>
+<a class="image" href="_images/module-06-network/03_NAD_YAML.png" target="blank"><img src="_images/module-06-network/03_NAD_YAML.png" alt="03 NAD YAML" width="100%"></a>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -300,7 +318,7 @@ In most cases a single OVS bridge can support many Network Attachment Definition
 <p>Examine the details of the network attachment definition. Because this was created in the <strong>vmexamples</strong> project, it will be available only to attach to VMs that are in that project.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-03/04_NAD_Created.png" target="blank"><img src="_images/module-03/04_NAD_Created.png" alt="04 NAD Created" width="100%"></a>
+<a class="image" href="_images/module-06-network/04_NAD_Created.png" target="blank"><img src="_images/module-06-network/04_NAD_Created.png" alt="04 NAD Created" width="100%"></a>
 </div>
 </div>
 </li>
@@ -317,7 +335,7 @@ In most cases a single OVS bridge can support many Network Attachment Definition
 <p>Navigate to <strong>Virtualization</strong> &#8594; <strong>VirtualMachines</strong>, select the <strong>fedora01</strong> VM. Click <strong>Configuration</strong> tab and then click the <strong>Network</strong> subtab:</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-03/05_VM_Network_Tab.png" target="blank"><img src="_images/module-03/05_VM_Network_Tab.png" alt="05 VM Network Tab" width="100%"></a>
+<a class="image" href="_images/module-06-network/05_VM_Network_Tab.png" target="blank"><img src="_images/module-06-network/05_VM_Network_Tab.png" alt="05 VM Network Tab" width="100%"></a>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -337,7 +355,7 @@ Notice that the VM is currently using a single interface <strong>default</strong
 <p>Click the three-dot menu at the end of the <strong>default</strong> network adapter line, and click on edit in the drop down menu.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-03/06_Edit_Default.png" target="blank"><img src="_images/module-03/06_Edit_Default.png" alt="06 Edit Default" width="100%"></a>
+<a class="image" href="_images/module-06-network/06_Edit_Default.png" target="blank"><img src="_images/module-06-network/06_Edit_Default.png" alt="06 Edit Default" width="100%"></a>
 </div>
 </div>
 </li>
@@ -345,7 +363,7 @@ Notice that the VM is currently using a single interface <strong>default</strong
 <p>Click the dropdown menu for the <strong>Network</strong> field, and select the vmexamples/vlan0 network attachment definition that we created. Click on <strong>Save</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-03/07_VM_Net_Modify.png" target="blank"><img src="_images/module-03/07_VM_Net_Modify.png" alt="07 VM Net Modify" width="100%"></a>
+<a class="image" href="_images/module-06-network/07_VM_Net_Modify.png" target="blank"><img src="_images/module-06-network/07_VM_Net_Modify.png" alt="07 VM Net Modify" width="100%"></a>
 </div>
 </div>
 </li>
@@ -356,7 +374,7 @@ Notice that the VM is currently using a single interface <strong>default</strong
 <p>Once the machine restarts, you can see in the <strong>Network Interfaces</strong> section of the <strong>Overview</strong> screen that the <strong>default</strong> interface obtains a DHCP IP address from the flat network (<strong>192.168.3.x/24</strong>).</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-03/08_New_IP_Address.png" target="blank"><img src="_images/module-03/08_New_IP_Address.png" alt="08 New IP Address" width="100%"></a>
+<a class="image" href="_images/module-06-network/08_New_IP_Address.png" target="blank"><img src="_images/module-06-network/08_New_IP_Address.png" alt="08 New IP Address" width="100%"></a>
 </div>
 </div>
 </li>
@@ -413,7 +431,7 @@ The IP addresses of your virtual guests may differ from those in the attached im
 </div>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-03/10_Find_IP_Addresses.png" target="blank"><img src="_images/module-03/10_Find_IP_Addresses.png" alt="10 Find IP Addresses" width="100%"></a>
+<a class="image" href="_images/module-06-network/10_Find_IP_Addresses.png" target="blank"><img src="_images/module-06-network/10_Find_IP_Addresses.png" alt="10 Find IP Addresses" width="100%"></a>
 </div>
 </div>
 <div class="olist arabic">
@@ -440,7 +458,7 @@ spec:
 <p>Once the file is saved, start a ping to the IP address of the <strong>fedora01</strong> virtual machine to confirm that you can currently connect.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-03/11_Bastion_Ping.png" target="blank"><img src="_images/module-03/11_Bastion_Ping.png" alt="11 Bastion Ping" width="100%"></a>
+<a class="image" href="_images/module-06-network/11_Bastion_Ping.png" target="blank"><img src="_images/module-06-network/11_Bastion_Ping.png" alt="11 Bastion Ping" width="100%"></a>
 </div>
 </div>
 </li>
@@ -453,7 +471,7 @@ spec:
 </div>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-03/12_Deny_All_Applied.png" target="blank"><img src="_images/module-03/12_Deny_All_Applied.png" alt="12 Deny All Applied" width="100%"></a>
+<a class="image" href="_images/module-06-network/12_Deny_All_Applied.png" target="blank"><img src="_images/module-06-network/12_Deny_All_Applied.png" alt="12 Deny All Applied" width="100%"></a>
 </div>
 </div>
 </li>
@@ -461,7 +479,7 @@ spec:
 <p>Now try again to ping the IP address of the fedora01 virtual machine, your ping attempts should now fail.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-03/13_Bastion_Ping_Fail.png" target="blank"><img src="_images/module-03/13_Bastion_Ping_Fail.png" alt="13 Bastion Ping Fail" width="100%"></a>
+<a class="image" href="_images/module-06-network/13_Bastion_Ping_Fail.png" target="blank"><img src="_images/module-06-network/13_Bastion_Ping_Fail.png" alt="13 Bastion Ping Fail" width="100%"></a>
 </div>
 </div>
 </li>
@@ -469,7 +487,7 @@ spec:
 <p>Return to your OpenShift console, and click on <strong>Virtualization &#8594; VirtualMachines</strong> and select your <strong>fedora02</strong> machine.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-03/14_Fedora02_Overview.png" target="blank"><img src="_images/module-03/14_Fedora02_Overview.png" alt="14 Fedora02 Overview" width="100%"></a>
+<a class="image" href="_images/module-06-network/14_Fedora02_Overview.png" target="blank"><img src="_images/module-06-network/14_Fedora02_Overview.png" alt="14 Fedora02 Overview" width="100%"></a>
 </div>
 </div>
 </li>
@@ -477,7 +495,7 @@ spec:
 <p>Click on the button to open it&#8217;s web console, and login with the provided credentials.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-03/15_Fedora02_Console.png" target="blank"><img src="_images/module-03/15_Fedora02_Console.png" alt="15 Fedora02 Console" width="100%"></a>
+<a class="image" href="_images/module-06-network/15_Fedora02_Console.png" target="blank"><img src="_images/module-06-network/15_Fedora02_Console.png" alt="15 Fedora02 Console" width="100%"></a>
 </div>
 </div>
 </li>
@@ -485,7 +503,7 @@ spec:
 <p>Attempt to ping the ip address for the <strong>fedora01</strong> virtual machine, notice that it is also blocked, even though we are on the same subnet, in the same namespace. <strong>Leave the ping running.</strong></p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-03/16_Fedora02_Ping_Fail.png" target="blank"><img src="_images/module-03/16_Fedora02_Ping_Fail.png" alt="16 Fedora02 Ping Fail" width="100%"></a>
+<a class="image" href="_images/module-06-network/16_Fedora02_Ping_Fail.png" target="blank"><img src="_images/module-06-network/16_Fedora02_Ping_Fail.png" alt="16 Fedora02 Ping Fail" width="100%"></a>
 </div>
 </div>
 </li>
@@ -523,7 +541,7 @@ Make sure that you substitute the correct IP from the Fedora02 VM.
 </div>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-03/17_Allow_Host_Syntax.png" target="blank"><img src="_images/module-03/17_Allow_Host_Syntax.png" alt="17 Allow Host Syntax" width="100%"></a>
+<a class="image" href="_images/module-06-network/17_Allow_Host_Syntax.png" target="blank"><img src="_images/module-06-network/17_Allow_Host_Syntax.png" alt="17 Allow Host Syntax" width="100%"></a>
 </div>
 </div>
 </li>
@@ -536,7 +554,7 @@ Make sure that you substitute the correct IP from the Fedora02 VM.
 </div>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-03/18_Allow_Host_Applied.png" target="blank"><img src="_images/module-03/18_Allow_Host_Applied.png" alt="18 Allow Host Applied" width="100%"></a>
+<a class="image" href="_images/module-06-network/18_Allow_Host_Applied.png" target="blank"><img src="_images/module-06-network/18_Allow_Host_Applied.png" alt="18 Allow Host Applied" width="100%"></a>
 </div>
 </div>
 </li>
@@ -544,7 +562,7 @@ Make sure that you substitute the correct IP from the Fedora02 VM.
 <p>Attempt to ping from the bastion host. This attempt should still fail as we have not explictly allowed it.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-03/19_Bastion_Still_Blocked.png" target="blank"><img src="_images/module-03/19_Bastion_Still_Blocked.png" alt="19 Bastion Still Blocked" width="100%"></a>
+<a class="image" href="_images/module-06-network/19_Bastion_Still_Blocked.png" target="blank"><img src="_images/module-06-network/19_Bastion_Still_Blocked.png" alt="19 Bastion Still Blocked" width="100%"></a>
 </div>
 </div>
 </li>
@@ -552,7 +570,7 @@ Make sure that you substitute the correct IP from the Fedora02 VM.
 <p>Return to your <strong>fedora02</strong> VM console, you should find that the ping has now resumed successfully.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-03/20_Fedora02_Ping_Allowed.png" target="blank"><img src="_images/module-03/20_Fedora02_Ping_Allowed.png" alt="20 Fedora02 Ping Allowed" width="100%"></a>
+<a class="image" href="_images/module-06-network/20_Fedora02_Ping_Allowed.png" target="blank"><img src="_images/module-06-network/20_Fedora02_Ping_Allowed.png" alt="20 Fedora02 Ping Allowed" width="100%"></a>
 </div>
 </div>
 </li>
@@ -593,8 +611,8 @@ For the next lab, it&#8217;s important that we clear out the two network policie
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="module-02.html" class="query-params-link">3. Storage Management</a></span>
-  <span class="next"><a href="module-04.html" class="query-params-link">5. Template Management</a></span>
+  <span class="prev"><a href="module-05-bcdr.html" class="query-params-link">5. Backup and Recovery for Virtual Machines</a></span>
+  <span class="next"><a href="module-07-tempinst.html" class="query-params-link">7. Template and InstanceType Management</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

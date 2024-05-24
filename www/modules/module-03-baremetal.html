@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Bare Metal Machine Management :: Experience Red Hat OpenShift Virtualization</title>
-    <link rel="prev" href="module-00.html">
-    <link rel="next" href="module-02.html">
+    <link rel="prev" href="module-02-mtv.html">
+    <link rel="next" href="module-04-storage.html">
     <meta name="generator" content="Antora 3.1.7">
 <link rel="stylesheet" href="../_/css/site.css"><link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -42,28 +42,40 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-00.html">1. Virtual Machine Management </a>
+    <a class="nav-link" href="module-01-intro.html">1. Virtual Machine Management </a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-00.html#create_project">Create a New Project</a>
+    <a class="nav-link" href="module-01-intro.html#create_project">Create a New Project</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-00.html#create_vm">Create a Linux Virtual Machine</a>
+    <a class="nav-link" href="module-01-intro.html#create_vm">Create a Linux Virtual Machine</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-00.html#admin_vms">Administering Virtual Machines</a>
+    <a class="nav-link" href="module-01-intro.html#admin_vms">Administering Virtual Machines</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-00.html#vm_state">Controlling Virtual Machine State</a>
+    <a class="nav-link" href="module-01-intro.html#vm_state">Controlling Virtual Machine State</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-00.html#live_migrate">Live Migrate a Virtual Machine</a>
+    <a class="nav-link" href="module-01-intro.html#live_migrate">Live Migrate a Virtual Machine</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="module-02-mtv.html">2. Migrating Existing Virtual Machines</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-02-mtv.html#prerequisites">Prerequisites for Migrations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-02-mtv.html#migrating_vms">Migrating Virtual Machines from VMware</a>
   </li>
 </ul>
   </li>
   <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-01.html">2. Bare Metal Management </a>
+    <a class="nav-link" href="module-03-baremetal.html">3. Bare Metal Management </a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="#review_nodes">Review Nodes and Machines</a>
@@ -78,57 +90,63 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-02.html">3. Storage Management</a>
+    <a class="nav-link" href="module-04-storage.html">4. Storage Management</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-02.html#examine_pvc">Examine the PVC for a VM</a>
+    <a class="nav-link" href="module-04-storage.html#examine_pvc">Examine the PVC for a VM</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-02.html#managing_snapshots">Managing Snapshots</a>
+    <a class="nav-link" href="module-04-storage.html#managing_snapshots">Managing Snapshots</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-02.html#clone_vm">Clone a Virtual Machine</a>
+    <a class="nav-link" href="module-04-storage.html#clone_vm">Clone a Virtual Machine</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-03.html">4. Network Management</a>
+    <a class="nav-link" href="module-05-bcdr.html">5. Backup and Recovery for Virtual Machines</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-03.html#create_netattach">Create a Network Attachment Definition</a>
+    <a class="nav-link" href="module-05-bcdr.html#review_operator">Review the OADP Operator</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-03.html#connect_external_net">Connect a Virtual Machine to an External Network</a>
+    <a class="nav-link" href="module-05-bcdr.html#create_backup">Create a Virtual Machine Backup</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-03.html#multinetwork_policy">Using a Multinetwork Policy</a>
+    <a class="nav-link" href="module-05-bcdr.html#restore_backup">Restore From a Backup</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-04.html">5. Template Management</a>
+    <a class="nav-link" href="module-06-network.html">6. Network Management</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-04.html#clone_customize_template">Clone and Customize a Template</a>
+    <a class="nav-link" href="module-06-network.html#create_netattach">Create a Network Attachment Definition</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-04.html#create_win">Create a Windows VM Template</a>
+    <a class="nav-link" href="module-06-network.html#connect_external_net">Connect a Virtual Machine to an External Network</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-06-network.html#multinetwork_policy">Using a Multinetwork Policy</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-05.html">6. Migrating Virtual Machines</a>
+    <a class="nav-link" href="module-07-tempinst.html">7. Template and InstanceType Management</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-05.html#prerequisites">Prerequisites for Migrations</a>
+    <a class="nav-link" href="module-07-tempinst.html#clone_customize_template">Clone and Customize a Template</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-05.html#migrating_vms">Migrating Virtual Machines from VMware</a>
+    <a class="nav-link" href="module-07-tempinst.html#create_win">Create a Windows VM Template</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="module-08-workingvms.html">8. Working with Virtual Machines</a>
   </li>
 </ul>
   </li>
@@ -160,7 +178,7 @@
   <a href="index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="module-01.html">2. Bare Metal Management </a></li>
+    <li><a href="module-03-baremetal.html">3. Bare Metal Management </a></li>
   </ul>
 </nav>
 </div>
@@ -171,16 +189,19 @@
 <h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In this lab, you will review the physical environment used during this workshop, including an overview of OpenShift deployed to bare metal hosts. This environment runs on bare metal hosts in the Equinix cloud. This review will help provide you with an understanding of how the nodes are configured in the cluster, and what their current hardware capabilities are. You will then be tasked with adding an additional machine and scaling the number of cluster nodes using the Red Hat OpenShift web console.</p>
+<p>In this portion of the lablab, you will review the physical environment used during this workshop, including an overview of OpenShift deployed to bare metal hosts. This environment runs on bare metal hosts in the Equinix cloud. This review will help provide you with an understanding of how the nodes are configured in the cluster, and what their current hardware capabilities are. You will then be tasked with adding an additional machine and scaling the number of cluster nodes using the Red Hat OpenShift web console.</p>
 </div>
 <div class="ulist">
-<div class="title">Goals</div>
+<div class="title"><strong>Goals</strong></div>
 <ul>
 <li>
-<p>Explore the nodes and machines in your <strong>Red Hat OpenShift Container Platform</strong> cluster</p>
+<p>Explore the requirements for clusters running OpenShift Virtualization</p>
 </li>
 <li>
-<p>Scale the baremetal cluster using the web console</p>
+<p>Review the physical characteristics of the lab cluster.</p>
+</li>
+<li>
+<p>Discover a new baremetal machine, and use it to scale the cluster.</p>
 </li>
 </ul>
 </div>
@@ -321,7 +342,7 @@ If your cluster uses worker nodes with different CPUs, e.g. Intel and AMD, live 
 <p>From the navigation menu on the left, select <strong>Compute</strong> &#8594; <strong>Nodes</strong>:</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-01/01_Compute_Nodes.png" target="blank"><img src="_images/module-01/01_Compute_Nodes.png" alt="01 Compute Nodes" width="100%"></a>
+<a class="image" href="_images/module-03-baremetal/01_Compute_Nodes.png" target="blank"><img src="_images/module-03-baremetal/01_Compute_Nodes.png" alt="01 Compute Nodes" width="100%"></a>
 </div>
 </div>
 <div class="paragraph">
@@ -335,7 +356,7 @@ If your cluster uses worker nodes with different CPUs, e.g. Intel and AMD, live 
 <p>Click on one of the worker nodes to obtain resource information about the node:</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-01/02_Worker0_Information.png" target="blank"><img src="_images/module-01/02_Worker0_Information.png" alt="02 Worker0 Information" width="100%"></a>
+<a class="image" href="_images/module-03-baremetal/02_Worker0_Information.png" target="blank"><img src="_images/module-03-baremetal/02_Worker0_Information.png" alt="02 Worker0 Information" width="100%"></a>
 </div>
 </div>
 <div class="paragraph">
@@ -362,7 +383,7 @@ At least one physical node is required for OpenShift Virtualization, "nesting" a
 <p>Navigate to the tab <strong>Details</strong> to obtain more information about the operating system.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-01/03_Worker0_Details.png" target="blank"><img src="_images/module-01/03_Worker0_Details.png" alt="03 Worker0 Details" width="100%"></a>
+<a class="image" href="_images/module-03-baremetal/03_Worker0_Details.png" target="blank"><img src="_images/module-03-baremetal/03_Worker0_Details.png" alt="03 Worker0 Details" width="100%"></a>
 </div>
 </div>
 </li>
@@ -382,7 +403,7 @@ At least one physical node is required for OpenShift Virtualization, "nesting" a
 <p>Select <strong>Compute</strong> &#8594; <strong>Bare Metal Hosts</strong>:</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-01/04_BMHosts.png" target="blank"><img src="_images/module-01/04_BMHosts.png" alt="04 BMHosts" width="100%"></a>
+<a class="image" href="_images/module-03-baremetal/04_BMHosts.png" target="blank"><img src="_images/module-03-baremetal/04_BMHosts.png" alt="04 BMHosts" width="100%"></a>
 </div>
 </div>
 <div class="paragraph">
@@ -393,7 +414,7 @@ At least one physical node is required for OpenShift Virtualization, "nesting" a
 <p>Click on any of the worker nodes to obtain information about the physical (bare metal) node:</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-01/05_Worker0_BMHost.png" target="blank"><img src="_images/module-01/05_Worker0_BMHost.png" alt="05 Worker0 BMHost" width="100%"></a>
+<a class="image" href="_images/module-03-baremetal/05_Worker0_BMHost.png" target="blank"><img src="_images/module-03-baremetal/05_Worker0_BMHost.png" alt="05 Worker0 BMHost" width="100%"></a>
 </div>
 </div>
 <div class="paragraph">
@@ -434,7 +455,7 @@ Before you begin this section of the lab, you need to switch to the <strong>open
 <p>Select <strong>Compute</strong> &#8594; <strong>Bare Metal Hosts</strong>:</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-01/04_BMHosts.png" target="blank"><img src="_images/module-01/04_BMHosts.png" alt="04 BMHosts" width="100%"></a>
+<a class="image" href="_images/module-03-baremetal/04_BMHosts.png" target="blank"><img src="_images/module-03-baremetal/04_BMHosts.png" alt="04 BMHosts" width="100%"></a>
 </div>
 </div>
 </li>
@@ -442,7 +463,7 @@ Before you begin this section of the lab, you need to switch to the <strong>open
 <p>Click on the <strong>Add Host</strong> button in the upper right corner, and select the <strong>New with Dialog</strong> option.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-01/06_Add_Host_Red.png" target="blank"><img src="_images/module-01/06_Add_Host_Red.png" alt="06 Add Host Red" width="100%"></a>
+<a class="image" href="_images/module-03-baremetal/06_Add_Host_Red.png" target="blank"><img src="_images/module-03-baremetal/06_Add_Host_Red.png" alt="06 Add Host Red" width="100%"></a>
 </div>
 </div>
 </li>
@@ -472,7 +493,7 @@ Before you begin this section of the lab, you need to switch to the <strong>open
 <p>With this information filled out, click the <strong>Create</strong> button at the bottom of the dialog page.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-01/07_Create_Host_Red.png" target="blank"><img src="_images/module-01/07_Create_Host_Red.png" alt="07 Create Host Red" width="100%"></a>
+<a class="image" href="_images/module-03-baremetal/07_Create_Host_Red.png" target="blank"><img src="_images/module-03-baremetal/07_Create_Host_Red.png" alt="07 Create Host Red" width="100%"></a>
 </div>
 </div>
 </li>
@@ -480,7 +501,7 @@ Before you begin this section of the lab, you need to switch to the <strong>open
 <p>You will then be presented with the summary screen for <strong>worker4</strong>, and you will see the status update as it attempts to contact the machine and make it available as a host.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-01/08_Worker4_Summary_1.png" target="blank"><img src="_images/module-01/08_Worker4_Summary_1.png" alt="08 Worker4 Summary 1" width="100%"></a>
+<a class="image" href="_images/module-03-baremetal/08_Worker4_Summary_1.png" target="blank"><img src="_images/module-03-baremetal/08_Worker4_Summary_1.png" alt="08 Worker4 Summary 1" width="100%"></a>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -500,7 +521,7 @@ This step may take several minutes to update as it powers up the host, and colle
 <p>When host discovery and hardware inspection is complete you will see that it shows it&#8217;s status as <strong>Available</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-01/09_Worker4_Summary_2.png" target="blank"><img src="_images/module-01/09_Worker4_Summary_2.png" alt="09 Worker4 Summary 2" width="100%"></a>
+<a class="image" href="_images/module-03-baremetal/09_Worker4_Summary_2.png" target="blank"><img src="_images/module-03-baremetal/09_Worker4_Summary_2.png" alt="09 Worker4 Summary 2" width="100%"></a>
 </div>
 </div>
 </li>
@@ -514,7 +535,7 @@ This step may take several minutes to update as it powers up the host, and colle
 </div>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-01/09a_Worker4_Yaml_Edit.png" target="blank"><img src="_images/module-01/09a_Worker4_Yaml_Edit.png" alt="09a Worker4 Yaml Edit" width="100%"></a>
+<a class="image" href="_images/module-03-baremetal/09a_Worker4_Yaml_Edit.png" target="blank"><img src="_images/module-03-baremetal/09a_Worker4_Yaml_Edit.png" alt="09a Worker4 Yaml Edit" width="100%"></a>
 </div>
 </div>
 </li>
@@ -522,7 +543,7 @@ This step may take several minutes to update as it powers up the host, and colle
 <p>Once a host has been physically discovered the next step is to add it as a machine to be used by OpenShift. Click on the menu for <strong>MachineSets</strong> on the left under <strong>Compute</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-01/10_Machinesets.png" target="blank"><img src="_images/module-01/10_Machinesets.png" alt="10 Machinesets" width="100%"></a>
+<a class="image" href="_images/module-03-baremetal/10_Machinesets.png" target="blank"><img src="_images/module-03-baremetal/10_Machinesets.png" alt="10 Machinesets" width="100%"></a>
 </div>
 </div>
 </li>
@@ -530,7 +551,7 @@ This step may take several minutes to update as it powers up the host, and colle
 <p>Click on the <strong>three-dot</strong> menu on the top-right side, and select <strong>Edit Machine count</strong> from the dropdown menu.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-01/11_Edit_Machine_Count.png" target="blank"><img src="_images/module-01/11_Edit_Machine_Count.png" alt="11 Edit Machine Count" width="100%"></a>
+<a class="image" href="_images/module-03-baremetal/11_Edit_Machine_Count.png" target="blank"><img src="_images/module-03-baremetal/11_Edit_Machine_Count.png" alt="11 Edit Machine Count" width="100%"></a>
 </div>
 </div>
 </li>
@@ -538,7 +559,7 @@ This step may take several minutes to update as it powers up the host, and colle
 <p>A new menu will appear showing the current machine count of <strong>3</strong>, click the plus (+) sign to increase the machine count to <strong>4</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-01/12_Edit_Machine_Count_4.png" target="blank"><img src="_images/module-01/12_Edit_Machine_Count_4.png" alt="12 Edit Machine Count 4" width="100%"></a>
+<a class="image" href="_images/module-03-baremetal/12_Edit_Machine_Count_4.png" target="blank"><img src="_images/module-03-baremetal/12_Edit_Machine_Count_4.png" alt="12 Edit Machine Count 4" width="100%"></a>
 </div>
 </div>
 </li>
@@ -546,7 +567,7 @@ This step may take several minutes to update as it powers up the host, and colle
 <p>You will be returned to the MachineSets page, and you can now see that the count of machines is 3/4 machines.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-01/13_Machine_Count_3_4.png" target="blank"><img src="_images/module-01/13_Machine_Count_3_4.png" alt="13 Machine Count 3 4" width="100%"></a>
+<a class="image" href="_images/module-03-baremetal/13_Machine_Count_3_4.png" target="blank"><img src="_images/module-03-baremetal/13_Machine_Count_3_4.png" alt="13 Machine Count 3 4" width="100%"></a>
 </div>
 </div>
 </li>
@@ -559,14 +580,14 @@ This step may take several minutes to update as it powers up the host, and colle
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-This step can take a few minutes to complete, as the node reboots several times during the installation process. Please be patient.
+This step can take a few minutes to complete, as the node reboots several times during the installation process, please feel free to continue with next roadshow module and come back and check on the status of this step at your leisure.
 </td>
 </tr>
 </table>
 </div>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-01/14_Worker_4_Provisioning.png" target="blank"><img src="_images/module-01/14_Worker_4_Provisioning.png" alt="14 Worker 4 Provisioning" width="100%"></a>
+<a class="image" href="_images/module-03-baremetal/14_Worker_4_Provisioning.png" target="blank"><img src="_images/module-03-baremetal/14_Worker_4_Provisioning.png" alt="14 Worker 4 Provisioning" width="100%"></a>
 </div>
 </div>
 </li>
@@ -574,7 +595,7 @@ This step can take a few minutes to complete, as the node reboots several times 
 <p>Once provisioning is complete you will see the node listed with it&#8217;s Phase set to <strong>Provisioned as node</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-01/15_Provisioned_As_Node.png" target="blank"><img src="_images/module-01/15_Provisioned_As_Node.png" alt="15 Provisioned As Node" width="100%"></a>
+<a class="image" href="_images/module-03-baremetal/15_Provisioned_As_Node.png" target="blank"><img src="_images/module-03-baremetal/15_Provisioned_As_Node.png" alt="15 Provisioned As Node" width="100%"></a>
 </div>
 </div>
 </li>
@@ -582,7 +603,7 @@ This step can take a few minutes to complete, as the node reboots several times 
 <p>Since our new host has now been added to the machineset and provisioned as a node, we can now see it available if we click on the <strong>Nodes</strong> menu on the left.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-01/16_All_Nodes.png" target="blank"><img src="_images/module-01/16_All_Nodes.png" alt="16 All Nodes" width="100%"></a>
+<a class="image" href="_images/module-03-baremetal/16_All_Nodes.png" target="blank"><img src="_images/module-03-baremetal/16_All_Nodes.png" alt="16 All Nodes" width="100%"></a>
 </div>
 </div>
 </li>
@@ -590,7 +611,7 @@ This step can take a few minutes to complete, as the node reboots several times 
 <p>We can also click directly on <strong>worker4</strong> under the <strong>Name</strong> column to see it&#8217;s current status.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-01/17_Worker_4_Details.png" target="blank"><img src="_images/module-01/17_Worker_4_Details.png" alt="17 Worker 4 Details" width="100%"></a>
+<a class="image" href="_images/module-03-baremetal/17_Worker_4_Details.png" target="blank"><img src="_images/module-03-baremetal/17_Worker_4_Details.png" alt="17 Worker 4 Details" width="100%"></a>
 </div>
 </div>
 </li>
@@ -610,8 +631,8 @@ This step can take a few minutes to complete, as the node reboots several times 
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="module-00.html" class="query-params-link">1. Virtual Machine Management </a></span>
-  <span class="next"><a href="module-02.html" class="query-params-link">3. Storage Management</a></span>
+  <span class="prev"><a href="module-02-mtv.html" class="query-params-link">2. Migrating Existing Virtual Machines</a></span>
+  <span class="next"><a href="module-04-storage.html" class="query-params-link">4. Storage Management</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

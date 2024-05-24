@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Virtual Machine Management :: Experience Red Hat OpenShift Virtualization</title>
     <link rel="prev" href="index.html">
-    <link rel="next" href="module-01.html">
+    <link rel="next" href="module-02-mtv.html">
     <meta name="generator" content="Antora 3.1.7">
 <link rel="stylesheet" href="../_/css/site.css"><link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -42,7 +42,7 @@
   </li>
   <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-00.html">1. Virtual Machine Management </a>
+    <a class="nav-link" href="module-01-intro.html">1. Virtual Machine Management </a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="#create_project">Create a New Project</a>
@@ -63,72 +63,90 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-01.html">2. Bare Metal Management </a>
+    <a class="nav-link" href="module-02-mtv.html">2. Migrating Existing Virtual Machines</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-01.html#review_nodes">Review Nodes and Machines</a>
+    <a class="nav-link" href="module-02-mtv.html#prerequisites">Prerequisites for Migrations</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-01.html#review_hosts">Review Bare Metal Hosts</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-01.html#scaling_cluster">Scaling the Cluster with a New Bare Metal Host</a>
+    <a class="nav-link" href="module-02-mtv.html#migrating_vms">Migrating Virtual Machines from VMware</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-02.html">3. Storage Management</a>
+    <a class="nav-link" href="module-03-baremetal.html">3. Bare Metal Management </a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-02.html#examine_pvc">Examine the PVC for a VM</a>
+    <a class="nav-link" href="module-03-baremetal.html#review_nodes">Review Nodes and Machines</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-02.html#managing_snapshots">Managing Snapshots</a>
+    <a class="nav-link" href="module-03-baremetal.html#review_hosts">Review Bare Metal Hosts</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-02.html#clone_vm">Clone a Virtual Machine</a>
+    <a class="nav-link" href="module-03-baremetal.html#scaling_cluster">Scaling the Cluster with a New Bare Metal Host</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-03.html">4. Network Management</a>
+    <a class="nav-link" href="module-04-storage.html">4. Storage Management</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-03.html#create_netattach">Create a Network Attachment Definition</a>
+    <a class="nav-link" href="module-04-storage.html#examine_pvc">Examine the PVC for a VM</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-03.html#connect_external_net">Connect a Virtual Machine to an External Network</a>
+    <a class="nav-link" href="module-04-storage.html#managing_snapshots">Managing Snapshots</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-03.html#multinetwork_policy">Using a Multinetwork Policy</a>
+    <a class="nav-link" href="module-04-storage.html#clone_vm">Clone a Virtual Machine</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-04.html">5. Template Management</a>
+    <a class="nav-link" href="module-05-bcdr.html">5. Backup and Recovery for Virtual Machines</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-04.html#clone_customize_template">Clone and Customize a Template</a>
+    <a class="nav-link" href="module-05-bcdr.html#review_operator">Review the OADP Operator</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-04.html#create_win">Create a Windows VM Template</a>
+    <a class="nav-link" href="module-05-bcdr.html#create_backup">Create a Virtual Machine Backup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-05-bcdr.html#restore_backup">Restore From a Backup</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="module-05.html">6. Migrating Virtual Machines</a>
+    <a class="nav-link" href="module-06-network.html">6. Network Management</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-05.html#prerequisites">Prerequisites for Migrations</a>
+    <a class="nav-link" href="module-06-network.html#create_netattach">Create a Network Attachment Definition</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="module-05.html#migrating_vms">Migrating Virtual Machines from VMware</a>
+    <a class="nav-link" href="module-06-network.html#connect_external_net">Connect a Virtual Machine to an External Network</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-06-network.html#multinetwork_policy">Using a Multinetwork Policy</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="module-07-tempinst.html">7. Template and InstanceType Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-07-tempinst.html#clone_customize_template">Clone and Customize a Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-07-tempinst.html#create_win">Create a Windows VM Template</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="module-08-workingvms.html">8. Working with Virtual Machines</a>
   </li>
 </ul>
   </li>
@@ -160,7 +178,7 @@
   <a href="index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="module-00.html">1. Virtual Machine Management </a></li>
+    <li><a href="module-01-intro.html">1. Virtual Machine Management </a></li>
   </ul>
 </nav>
 </div>
@@ -174,7 +192,7 @@
 <p>The beginning section of this lab will introduce you to the basics of creating and managing VMs in OpenShift Virtualization. You will see how the web console guides you through the whole process of creating a virtual machine from a pre-defined template. We will then review the properties of that VM, do some basic customizations, and perform actions like live migration, that are often expected of virtual machine administrators.</p>
 </div>
 <div class="ulist">
-<div class="title">Goals</div>
+<div class="title"><strong>Goals</strong></div>
 <ul>
 <li>
 <p>Create a new virtual machine</p>
@@ -223,7 +241,7 @@
 <p>Browse to <strong>Virtualization</strong> &#8594; <strong>VirtualMachines</strong> using the left navigation menu:</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/01_Left_Menu.png" target="blank"><img src="_images/module-00/01_Left_Menu.png" alt="01 Left Menu" width="100%"></a>
+<a class="image" href="_images/module-01-intro/01_Left_Menu.png" target="blank"><img src="_images/module-01-intro/01_Left_Menu.png" alt="01 Left Menu" width="100%"></a>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -245,7 +263,7 @@
 <p>Examine the <strong>VirtualMachines</strong> dashboard that appears. There are currently several VMs listed, but they are not turned on:</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/02_VM_List.png" target="blank"><img src="_images/module-00/02_VM_List.png" alt="02 VM List" width="100%"></a>
+<a class="image" href="_images/module-01-intro/02_VM_List.png" target="blank"><img src="_images/module-01-intro/02_VM_List.png" alt="02 VM List" width="100%"></a>
 </div>
 </div>
 </li>
@@ -257,7 +275,7 @@
 <p>Click <strong>Project: All Projects</strong> at the lop left of the window and then click <strong>Create Project</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/02_All_Projects.png" target="blank"><img src="_images/module-00/02_All_Projects.png" alt="02 All Projects" width="100%"></a>
+<a class="image" href="_images/module-01-intro/02_All_Projects.png" target="blank"><img src="_images/module-01-intro/02_All_Projects.png" alt="02 All Projects" width="100%"></a>
 </div>
 </div>
 </li>
@@ -265,7 +283,7 @@
 <p>In the <strong>Name</strong> field, type <strong>vmexamples</strong> to name the project, then click <strong>Create</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/03_Create_Project.png" target="blank"><img src="_images/module-00/03_Create_Project.png" alt="03 Create Project" width="100%"></a>
+<a class="image" href="_images/module-01-intro/03_Create_Project.png" target="blank"><img src="_images/module-01-intro/03_Create_Project.png" alt="03 Create Project" width="100%"></a>
 </div>
 </div>
 </li>
@@ -297,7 +315,7 @@ VMs can also be created from an InstanceType wizard as well as created by enteri
 </div>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/04_Create_VM_Button.png" target="blank"><img src="_images/module-00/04_Create_VM_Button.png" alt="04 Create VM Button" width="100%"></a>
+<a class="image" href="_images/module-01-intro/04_Create_VM_Button.png" target="blank"><img src="_images/module-01-intro/04_Create_VM_Button.png" alt="04 Create VM Button" width="100%"></a>
 </div>
 </div>
 </li>
@@ -308,7 +326,7 @@ VMs can also be created from an InstanceType wizard as well as created by enteri
 </div>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/05_Create_VM_Templates.png" target="blank"><img src="_images/module-00/05_Create_VM_Templates.png" alt="05 Create VM Templates" width="100%"></a>
+<a class="image" href="_images/module-01-intro/05_Create_VM_Templates.png" target="blank"><img src="_images/module-01-intro/05_Create_VM_Templates.png" alt="05 Create VM Templates" width="100%"></a>
 </div>
 </div>
 </li>
@@ -316,7 +334,7 @@ VMs can also be created from an InstanceType wizard as well as created by enteri
 <p>Select the <strong>Fedora VM</strong> tile, and a dialog opens.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/06_Create_VM_Quick.png" target="blank"><img src="_images/module-00/06_Create_VM_Quick.png" alt="06 Create VM Quick" width="100%"></a>
+<a class="image" href="_images/module-01-intro/06_Create_VM_Quick.png" target="blank"><img src="_images/module-01-intro/06_Create_VM_Quick.png" alt="06 Create VM Quick" width="100%"></a>
 </div>
 </div>
 </li>
@@ -324,7 +342,7 @@ VMs can also be created from an InstanceType wizard as well as created by enteri
 <p>Change the name to <strong>fedora01</strong> and press <strong>Quick create VirtualMachine</strong>:</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/07_Create_VM_Quick_Name.png" target="blank"><img src="_images/module-00/07_Create_VM_Quick_Name.png" alt="07 Create VM Quick Name" width="100%"></a>
+<a class="image" href="_images/module-01-intro/07_Create_VM_Quick_Name.png" target="blank"><img src="_images/module-01-intro/07_Create_VM_Quick_Name.png" alt="07 Create VM Quick Name" width="100%"></a>
 </div>
 </div>
 </li>
@@ -332,7 +350,7 @@ VMs can also be created from an InstanceType wizard as well as created by enteri
 <p>After a few seconds, expect to see the VM is <strong>Running</strong>. During this time, the storage provider has cloned the template disk so that it can be used by the newly created virtual machine. The amount of time this takes can vary based on the storage provider being used to create the boot disk.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/08_Fedora_Running.png" target="blank"><img src="_images/module-00/08_Fedora_Running.png" alt="08 Fedora Running" width="100%"></a>
+<a class="image" href="_images/module-01-intro/08_Fedora_Running.png" target="blank"><img src="_images/module-01-intro/08_Fedora_Running.png" alt="08 Fedora Running" width="100%"></a>
 </div>
 </div>
 </li>
@@ -340,7 +358,7 @@ VMs can also be created from an InstanceType wizard as well as created by enteri
 <p>After the VM is created, examine the <strong>Events</strong> tab to see some details of the process. If there are any issues with the creation of the VM, they will show up on this tab as well.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/09_Fedora_Events.png" target="blank"><img src="_images/module-00/09_Fedora_Events.png" alt="09 Fedora Events" width="100%"></a>
+<a class="image" href="_images/module-01-intro/09_Fedora_Events.png" target="blank"><img src="_images/module-01-intro/09_Fedora_Events.png" alt="09 Fedora Events" width="100%"></a>
 </div>
 </div>
 <div class="ulist">
@@ -361,7 +379,7 @@ VMs can also be created from an InstanceType wizard as well as created by enteri
 </div>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/10_Fedora_Details.png" target="blank"><img src="_images/module-00/10_Fedora_Details.png" alt="10 Fedora Details" width="100%"></a>
+<a class="image" href="_images/module-01-intro/10_Fedora_Details.png" target="blank"><img src="_images/module-01-intro/10_Fedora_Details.png" alt="10 Fedora Details" width="100%"></a>
 </div>
 </div>
 </li>
@@ -381,7 +399,7 @@ VMs can also be created from an InstanceType wizard as well as created by enteri
 <p>Click the <strong>Configuration</strong> tab, this is the entry point to obtain information about the resources of the Virtual Machine.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/11_Configuration_Tab_Nav.png" target="blank"><img src="_images/module-00/11_Configuration_Tab_Nav.png" alt="11 Configuration Tab Nav" width="100%"></a>
+<a class="image" href="_images/module-01-intro/11_Configuration_Tab_Nav.png" target="blank"><img src="_images/module-01-intro/11_Configuration_Tab_Nav.png" alt="11 Configuration Tab Nav" width="100%"></a>
 </div>
 </div>
 <div class="paragraph">
@@ -389,7 +407,7 @@ VMs can also be created from an InstanceType wizard as well as created by enteri
 </div>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/12_Configuration_Tab.png" target="blank"><img src="_images/module-00/12_Configuration_Tab.png" alt="12 Configuration Tab" width="100%"></a>
+<a class="image" href="_images/module-01-intro/12_Configuration_Tab.png" target="blank"><img src="_images/module-01-intro/12_Configuration_Tab.png" alt="12 Configuration Tab" width="100%"></a>
 </div>
 </div>
 <div class="ulist">
@@ -422,7 +440,7 @@ VMs can also be created from an InstanceType wizard as well as created by enteri
 <p>List the disks associated with the VM by clicking on the <strong>Storage</strong> tab:</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/13_Storage_Tab.png" target="blank"><img src="_images/module-00/13_Storage_Tab.png" alt="13 Storage Tab" width="100%"></a>
+<a class="image" href="_images/module-01-intro/13_Storage_Tab.png" target="blank"><img src="_images/module-01-intro/13_Storage_Tab.png" alt="13 Storage Tab" width="100%"></a>
 </div>
 </div>
 <div class="paragraph">
@@ -433,7 +451,7 @@ VMs can also be created from an InstanceType wizard as well as created by enteri
 <p>Examine the network interfaces attached to the VM by clicking on the <strong>Network interfaces</strong> subtab:</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/14_Network_Tab.png" target="blank"><img src="_images/module-00/14_Network_Tab.png" alt="14 Network Tab" width="100%"></a>
+<a class="image" href="_images/module-01-intro/14_Network_Tab.png" target="blank"><img src="_images/module-01-intro/14_Network_Tab.png" alt="14 Network Tab" width="100%"></a>
 </div>
 </div>
 <div class="paragraph">
@@ -459,7 +477,7 @@ VMs can also be created from an InstanceType wizard as well as created by enteri
 <p>In the top right corner you will notice shortcut buttons for running state: stop, restart, and pause. As well as a dropdown menu title <strong>Actions</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/15_VM_State_Actions.png" target="blank"><img src="_images/module-00/15_VM_State_Actions.png" alt="15 VM State Actions" width="100%"></a>
+<a class="image" href="_images/module-01-intro/15_VM_State_Actions.png" target="blank"><img src="_images/module-01-intro/15_VM_State_Actions.png" alt="15 VM State Actions" width="100%"></a>
 </div>
 </div>
 <div class="olist loweralpha">
@@ -480,7 +498,7 @@ VMs can also be created from an InstanceType wizard as well as created by enteri
 <p>You can also access these options and more by clicking on the <strong>Actions</strong> menu and seeing the options available in the drop down list.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/16_VM_Actions_Menu.png" target="blank"><img src="_images/module-00/16_VM_Actions_Menu.png" alt="16 VM Actions Menu" width="100%"></a>
+<a class="image" href="_images/module-01-intro/16_VM_Actions_Menu.png" target="blank"><img src="_images/module-01-intro/16_VM_Actions_Menu.png" alt="16 VM Actions Menu" width="100%"></a>
 </div>
 </div>
 </li>
@@ -488,7 +506,7 @@ VMs can also be created from an InstanceType wizard as well as created by enteri
 <p>Press the <strong>Stop</strong> button and wait until the Virtual Machine is in state <strong>Stopped</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/17_VM_Stopped.png" target="blank"><img src="_images/module-00/17_VM_Stopped.png" alt="17 VM Stopped" width="100%"></a>
+<a class="image" href="_images/module-01-intro/17_VM_Stopped.png" target="blank"><img src="_images/module-01-intro/17_VM_Stopped.png" alt="17 VM Stopped" width="100%"></a>
 </div>
 </div>
 </li>
@@ -496,7 +514,7 @@ VMs can also be created from an InstanceType wizard as well as created by enteri
 <p>Clicking on <strong>Actions</strong>, the option <strong>Start</strong> appears, and the options <strong>Restart</strong> and <strong>Pause</strong> are greyed out.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/18_VM_Actions_List_Stopped.png" target="blank"><img src="_images/module-00/18_VM_Actions_List_Stopped.png" alt="18 VM Actions List Stopped" width="100%"></a>
+<a class="image" href="_images/module-01-intro/18_VM_Actions_List_Stopped.png" target="blank"><img src="_images/module-01-intro/18_VM_Actions_List_Stopped.png" alt="18 VM Actions List Stopped" width="100%"></a>
 </div>
 </div>
 </li>
@@ -507,7 +525,7 @@ VMs can also be created from an InstanceType wizard as well as created by enteri
 <p>Using the <strong>Actions</strong> menu, or the shortcut button, press the <strong>Pause</strong> option. The Virtual Machine state will change to <strong>Paused</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/19_VM_Actions_Paused.png" target="blank"><img src="_images/module-00/19_VM_Actions_Paused.png" alt="19 VM Actions Paused" width="100%"></a>
+<a class="image" href="_images/module-01-intro/19_VM_Actions_Paused.png" target="blank"><img src="_images/module-01-intro/19_VM_Actions_Paused.png" alt="19 VM Actions Paused" width="100%"></a>
 </div>
 </div>
 </li>
@@ -530,7 +548,7 @@ VMs can also be created from an InstanceType wizard as well as created by enteri
 <p>Navigate to the <strong>Overview</strong> tab to see where the worker node is running:</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/20_VM_Info_Node.png" target="blank"><img src="_images/module-00/20_VM_Info_Node.png" alt="20 VM Info Node" width="100%"></a>
+<a class="image" href="_images/module-01-intro/20_VM_Info_Node.png" target="blank"><img src="_images/module-01-intro/20_VM_Info_Node.png" alt="20 VM Info Node" width="100%"></a>
 </div>
 </div>
 </li>
@@ -538,7 +556,7 @@ VMs can also be created from an InstanceType wizard as well as created by enteri
 <p>Using the <strong>Actions</strong> menu, select the option to <strong>Migrate</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/21_VM_Dialog_Migrate.png" target="blank"><img src="_images/module-00/21_VM_Dialog_Migrate.png" alt="21 VM Dialog Migrate" width="100%"></a>
+<a class="image" href="_images/module-01-intro/21_VM_Dialog_Migrate.png" target="blank"><img src="_images/module-01-intro/21_VM_Dialog_Migrate.png" alt="21 VM Dialog Migrate" width="100%"></a>
 </div>
 </div>
 </li>
@@ -546,7 +564,7 @@ VMs can also be created from an InstanceType wizard as well as created by enteri
 <p>After a few seconds, the VM will change the status to <strong>Migrating</strong>. A few seconds later, it will return to the <strong>Running</strong> status, but on a new node. The VM has been successfully live migrated!</p>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="_images/module-00/22_Migrated.png" target="blank"><img src="_images/module-00/22_Migrated.png" alt="22 Migrated" width="100%"></a>
+<a class="image" href="_images/module-01-intro/22_Migrated.png" target="blank"><img src="_images/module-01-intro/22_Migrated.png" alt="22 Migrated" width="100%"></a>
 </div>
 </div>
 </li>
@@ -564,7 +582,7 @@ VMs can also be created from an InstanceType wizard as well as created by enteri
 </div>
 <nav class="pagination">
   <span class="prev"><a href="index.html" class="query-params-link">Introduction</a></span>
-  <span class="next"><a href="module-01.html" class="query-params-link">2. Bare Metal Management </a></span>
+  <span class="next"><a href="module-02-mtv.html" class="query-params-link">2. Migrating Existing Virtual Machines</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

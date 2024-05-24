@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Working with Virtual Machines :: Experience Red Hat OpenShift Virtualization</title>
+    <link rel="prev" href="module-07-tempinst.html">
+    <meta name="generator" content="Antora 3.1.7">
+<link rel="stylesheet" href="../_/css/site.css"><link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="https://demo.redhat.com/images/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar"  style="background-color: #131313 !important;">
+    <div class="navbar-brand">
+      <div style="display: flex; flex-direction:row; padding: 12px 32px; gap: 16px;">
+        <img src="https://www.redhat.com/rhdc/managed-files/Red-Hat-Summit-logo.svg" alt="Red Hat Summit logo" width="90px" class="hero-summit-logo dx-block dx-mb-1">
+        <img src="https://gpte-public.s3.amazonaws.com/rh-ansiblefest-2021-logo-pool-reverse-rgb_0.svg" alt="AnsibleFest logo" width="auto" class="hero-ansiblefest-logo dx-block dx-mb-2">
+      </div>
+      <a class="navbar-item site-title" target="__blank" style="color: #fff !important;" href="..">Experience Red Hat OpenShift Virtualization</a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+</header>
+    <div class="body">
+<div class="nav-container" data-component="modules" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title" style="display: none;"><a href="index.html" class=" query-params-link">Sample Module Title</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="module-01-intro.html">1. Virtual Machine Management </a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-01-intro.html#create_project">Create a New Project</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-01-intro.html#create_vm">Create a Linux Virtual Machine</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-01-intro.html#admin_vms">Administering Virtual Machines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-01-intro.html#vm_state">Controlling Virtual Machine State</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-01-intro.html#live_migrate">Live Migrate a Virtual Machine</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="module-02-mtv.html">2. Migrating Existing Virtual Machines</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-02-mtv.html#prerequisites">Prerequisites for Migrations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-02-mtv.html#migrating_vms">Migrating Virtual Machines from VMware</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="module-03-baremetal.html">3. Bare Metal Management </a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-03-baremetal.html#review_nodes">Review Nodes and Machines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-03-baremetal.html#review_hosts">Review Bare Metal Hosts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-03-baremetal.html#scaling_cluster">Scaling the Cluster with a New Bare Metal Host</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="module-04-storage.html">4. Storage Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-04-storage.html#examine_pvc">Examine the PVC for a VM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-04-storage.html#managing_snapshots">Managing Snapshots</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-04-storage.html#clone_vm">Clone a Virtual Machine</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="module-05-bcdr.html">5. Backup and Recovery for Virtual Machines</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-05-bcdr.html#review_operator">Review the OADP Operator</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-05-bcdr.html#create_backup">Create a Virtual Machine Backup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-05-bcdr.html#restore_backup">Restore From a Backup</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="module-06-network.html">6. Network Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-06-network.html#create_netattach">Create a Network Attachment Definition</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-06-network.html#connect_external_net">Connect a Virtual Machine to an External Network</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-06-network.html#multinetwork_policy">Using a Multinetwork Policy</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="module-07-tempinst.html">7. Template and InstanceType Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-07-tempinst.html#clone_customize_template">Clone and Customize a Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="module-07-tempinst.html#create_win">Create a Windows VM Template</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="module-08-workingvms.html">8. Working with Virtual Machines</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore" style="display: none;">
+  <div class="context">
+    <span class="title">Sample Module Title</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Sample Module Title</span>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="module-08-workingvms.html">8. Working with Virtual Machines</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Working with Virtual Machines</h1>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section of our lab is dedicated to the Day-2 operations that many administrators would need to perform when working with virtual machines in their OpenShift Virtualization environment. Often this takes place by creating a load balancer object using a tool like <strong>MetalLB</strong>, and by exposing our application through <strong>Services</strong> and <strong>Routes</strong> to make it reachable from outside of the cluster. In this section we will cover the processes required to work with virtual machines once they are running within OpenShift virtualization</p>
+</div>
+<div class="paragraph">
+<p>In this lab, you will review the MetalLB operator and expose virtual machine hosted applications outside of the cluster.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_metallb_concepts"><a class="anchor" href="#_metallb_concepts"></a>MetalLB concepts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Using MetalLB is valuable when you have a bare-metal cluster or a virtual infrastructure that is treated like bare-metal, and you want to ensure fault-tolerant access to an application through an external IP address.</p>
+</div>
+<div class="paragraph">
+<p>For MetalLB to meet this need, you must configure your networking infrastructure to ensure that the network traffic for the external IP address is routed from clients to the host network for the cluster.</p>
+</div>
+<div class="paragraph">
+<p>It can operate in two modes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>MetalLB operating in layer2 mode</strong> provides support for failover by utilizing a mechanism similar to IP failover. However, instead of relying on the virtual router redundancy protocol (VRRP) and keepalived, MetalLB leverages a gossip-based protocol to identify instances of node failure. When a failure is detected, another node assumes the role of the leader node, and a gratuitous ARP message is dispatched to broadcast this change.</p>
+</li>
+<li>
+<p><strong>MetalLB operating in layer3 or border gateway protocol (BGP) mode</strong> delegates failure detection to the network. The <em>BGP</em> router or routers that the <strong>OpenShift Container Platform</strong> nodes have established a connection with will identify any node failure and terminate the routes to that node.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Using MetalLB instead of IP failover is preferable for ensuring high availability of pods and services.</p>
+</div>
+<div class="sect2">
+<h3 id="_layer2_mode"><a class="anchor" href="#_layer2_mode"></a>Layer2 mode</h3>
+<div class="paragraph">
+<p>In layer 2 mode, the speaker pod on one node announces the external IP address for a service to the host network. From a network perspective, the node appears to have multiple IP addresses assigned to a network interface.</p>
+</div>
+<div class="paragraph">
+<p>In layer 2 mode, all traffic for a service IP address is routed through one node. After traffic enters the node, the service proxy for the CNI network provider distributes the traffic to all the pods for the service.</p>
+</div>
+<div class="paragraph">
+<p>When a node becomes unavailable, failover is automatic. The speaker pods on the other nodes detect that a node is unavailable, and a new speaker pod on a surviving node will take ownership of the service IP address from the failed node.</p>
+</div>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/MetalLB/00_layer2.png" alt="00 layer2">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_layer_3_bgp_mode"><a class="anchor" href="#_layer_3_bgp_mode"></a>Layer 3 (BGP) mode</h3>
+<div class="paragraph">
+<p>In BGP mode, by default, each speaker pod advertises the load balancer IP address for a service to each BGP peer. It is also possible to advertise the IPs coming from a given pool to a specific set of peers by adding an optional list of BGP peers. BGP peers are commonly network routers that are configured to use the BGP protocol. When a router receives traffic for the load balancer IP address, the router picks one of the nodes with a speaker pod that advertised the IP address. The router sends the traffic to that node. After traffic enters the node, the service proxy for the CNI network plugin distributes the traffic to all the pods for the service.</p>
+</div>
+<div class="paragraph">
+<p>If a node becomes unavailable, the router then initiates a new connection with another node that has a speaker pod that is advertising the load balancer IP address.</p>
+</div>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/MetalLB/00_bgp.png" alt="00 bgp">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_define_ip_addresspool"><a class="anchor" href="#_define_ip_addresspool"></a>Define IP AddressPool</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For this lab, we will use the same network where the OpenShift Cluster nodes are located (<code>192.168.123.0/24</code>) and for this exercise we will reserve the IP range <code>192.168.123.200-192.168.123.250</code> to be used for load balanced services in the OpenShift cluster.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the left navigation menu, browse to <strong>Operators &#8594; Installed Operators</strong>, switch to project <code>metallb-system</code>. Then choose the MetalLB Operator</p>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/MetalLB/40_navigation.png" alt="40 navigation">
+</div>
+</div>
+</li>
+<li>
+<p>Switch the tab <strong>IPAddressPool</strong> (you may need to scroll the tabs to the right to see it) and press <strong>Create IPAddressPool</strong></p>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/MetalLB/21_navigation.png" alt="21 navigation">
+</div>
+</div>
+</li>
+<li>
+<p>Use the name <code>ip-addresspool-webapp</code> and under section <em>addresses</em>, remove any existing addresses and enter <code>192.168.123.200-192.168.123.250</code> as the address pool. When complete it should look similar to this image:</p>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/MetalLB/09_MetalLB_IPAddressPool_Defined.png" alt="09 MetalLB IPAddressPool Defined">
+</div>
+</div>
+</li>
+<li>
+<p>Scroll down and press <strong>Create</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_configure_layer2_mode"><a class="anchor" href="#_configure_layer2_mode"></a>Configure Layer2 mode</h3>
+<div class="paragraph">
+<p>For this lab we will use MetalLB in layer2 mode, so we need to create the configuration.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Switch to the <strong>L2Advertisement</strong> tab (you may need to scroll the tab list to the right to see it) and press <strong>Create L2Advertisement</strong>.</p>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/MetalLB/22_navigation.png" alt="22 navigation">
+</div>
+</div>
+</li>
+<li>
+<p>Indicate the name <code>l2-adv-webapp</code> and under section <em>ipaddressPools</em> specify the value <code>ip-addresspool-webapp</code> as is shown:</p>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/MetalLB/10_MetalLB_L2Advertisement.png" alt="10 MetalLB L2Advertisement">
+</div>
+</div>
+</li>
+<li>
+<p>Press <strong>Create</strong></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_expose_the_database_node_externally"><a class="anchor" href="#_expose_the_database_node_externally"></a>Expose the database node externally</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you completed the <strong>Exposing apps using a Route</strong> module, the VM is currently accessible from inside the cluster using the Service previously created. In this task, we will expose port 3306 outside of the cluster, making the database available to other virtual machines and consumers not hosted in OpenShift.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Navigate to <strong>Networking</strong> &#8594; <strong>Services</strong> and select the project <code>vmexamples</code></p>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/MetalLB/11_Services.png" alt="11 Services">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you did not complete the module <strong>Migrating Virtual Machines</strong> you can use pre-existing virtual machines in the <code>vmimported</code> project.</p>
+</div>
+<div class="paragraph">
+<p>If you are using the pre-imported virtual machines, please replace all instances of <code>vmexamples</code> namespace with <code>vmimported</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Press <strong>Create Service</strong> and fill the form with the following code snippet:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">apiVersion: v1
+kind: Service
+metadata:
+  name: database-metallb
+  namespace: vmexamples
+spec:
+  type: LoadBalancer
+  selector:
+    vm.kubevirt.io/name: database
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Notice the <code>type</code> indicated is <code>LoadBalancer</code>. Since this cluster has MetalLB installed, it will result in the specified port(s) exposed using that. There are other load balancer options available from partners such as F5, Nginx, and more.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Press <strong>Create</strong> and review the <strong>Service</strong> created. Notice the IP address assigned to the load balancer is from the range specified earlier in the lab.</p>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/MetalLB/12_Service_created.png" alt="12 Service created">
+</div>
+</div>
+</li>
+<li>
+<p>To verify connectivity to the database service via the external IP, open the web terminal by clicking the following icon in the right-top part.</p>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/OCP_Terminal_Icon.png" alt="OCP Terminal Icon">
+</div>
+</div>
+</li>
+<li>
+<p>A console in the bottom part of the screen appears</p>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/OCP_Terminal.png" alt="OCP Terminal">
+</div>
+</div>
+</li>
+<li>
+<p>Using the right console, try to access the IP assigned and the port 3306</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">[~] $ curl -s 192.168.123.202:3306 | cut -c1-16</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Sample Output</div>
+<div class="content">
+<pre class="nowrap">5.5.68-MariaDB</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_summary"><a class="anchor" href="#_summary"></a>Summary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>MetalLB is a straightforward and simple solution for bare-metal, on-premises deployments to expose applications outside of the cluster, without the need to configure physical networks with NMstate or multus.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exposing_an_application_with_a_serviceroute"><a class="anchor" href="#_exposing_an_application_with_a_serviceroute"></a>Exposing an Application with a Service/Route</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By default, virtual machines are connected to the SDN, which is a convenient and easy way to give them access to the rest of the network, but can be challenging for the virtual machines, and other Pods in the OpenShift cluster, to find and connect to the virtualized applications. To solve this, we will use a <code>Service</code> to balance connections across the two Windows-based web servers, and create a DNS entry for each service discovery, then create a <code>Route</code> to allow external clients to access the application hosted within the virtual machines.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you have not completed the module <strong>Migrating Virtual Machines</strong>, it is recommended that you do that module first. However, you can use pre-existing virtual machines that have been imported automatically in the <code>vmimported</code> project.</p>
+</div>
+<div class="paragraph">
+<p>If you are using the pre-imported virtual machines, please replace all instances of <code>vmexamples</code> namespace with <code>vmimported</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_a_service_and_route_to_expose_an_application"><a class="anchor" href="#_using_a_service_and_route_to_expose_an_application"></a>Using a Service and Route to expose an application</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Navigate to the address shown in <strong>Location</strong> field</p>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/MTV/203_route_access.png" alt="203 route access">
+</div>
+</div>
+</li>
+<li>
+<p>When the page loads, you will see an error. This is because the Windows web servers running on VMware are not able to currently connect to the database VM after it&#8217;s migration.</p>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/MTV/64_VMWARE_VMs_URL.png" alt="64 VMWARE VMs URL">
+</div>
+</div>
+<div class="paragraph">
+<p>To fix the connectivity issue, we need to create a Service for the database VM and then create a Route so that it is reachable from outside of the OpenShift cluster.</p>
+</div>
+</li>
+<li>
+<p>Navigate to <strong>Networking</strong> &#8594; <strong>Services</strong> and press <strong>Create service</strong>. Replace the YAML with the following definition:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">apiVersion: v1
+kind: Service
+metadata:
+  name: database
+  namespace: vmexamples
+spec:
+  selector:
+    vm.kubevirt.io/name: database
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Ensure the namespace with your virtual machines, <code>vmexamples</code> or <code>vmimported</code> is the one used in the Service YAML.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>We now need to create a route from which the database can be accessed outside of the cluster.</p>
+</li>
+<li>
+<p>Reload the webapp URL and expect to get the proper result</p>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="images/MTV/65_VMWARE_VMs_URL.png" alt="65 VMWARE VMs URL">
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="module-07-tempinst.html" class="query-params-link">7. Template and InstanceType Management</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a href="https://demo.redhat.com" target="_blank" class="poweredBy"><p>Powered by</p><div class="labInfo_poweredBy" style="display: block; width: 260px;"><svg class="labInfo_poweredByLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1508.5 178.739"><g fill="#111"><path d="M316.6 63.2v-56H342a21.279 21.279 0 0 1 7.8 1.3 18.111 18.111 0 0 1 5.9 3.5 15.577 15.577 0 0 1 5 11.8 15.051 15.051 0 0 1-3.1 9.5 16.836 16.836 0 0 1-8.4 5.8l12.5 24.1h-9.3l-11.6-23H325v23Zm24.7-48.6H325v18.7h16.3q5.25 0 8.1-2.7a8.7 8.7 0 0 0 2.8-6.6 8.7 8.7 0 0 0-2.8-6.6c-1.8-1.9-4.5-2.8-8.1-2.8ZM364.1 42.8a20.674 20.674 0 0 1 1.6-8.2 20.288 20.288 0 0 1 4.3-6.7 19.92 19.92 0 0 1 6.5-4.5 19.718 19.718 0 0 1 8-1.6 18.463 18.463 0 0 1 7.8 1.6 18.677 18.677 0 0 1 6.2 4.5 20.927 20.927 0 0 1 4.1 6.8 23.2 23.2 0 0 1 1.5 8.4v2.3H372a13.822 13.822 0 0 0 4.6 8.4 13.6 13.6 0 0 0 9.1 3.3 15.553 15.553 0 0 0 5.7-1 12.858 12.858 0 0 0 4.6-2.6l5.1 5a25.983 25.983 0 0 1-7.4 4.1 24.69 24.69 0 0 1-8.4 1.3 21.306 21.306 0 0 1-8.4-1.6 22.763 22.763 0 0 1-6.8-4.4 20.788 20.788 0 0 1-4.5-6.7 23.2 23.2 0 0 1-1.5-8.4Zm20.2-14.2a11.527 11.527 0 0 0-8 3 13.046 13.046 0 0 0-4.2 7.8h24.2a13.091 13.091 0 0 0-4.2-7.8 11.106 11.106 0 0 0-7.8-3ZM443.1 63.2v-3.8a19.448 19.448 0 0 1-5.8 3.3 18.924 18.924 0 0 1-6.7 1.2 19.824 19.824 0 0 1-14.6-6.1 22.268 22.268 0 0 1-4.4-6.7 21.812 21.812 0 0 1 0-16.4A20.534 20.534 0 0 1 416 28a19.335 19.335 0 0 1 6.6-4.5 20.334 20.334 0 0 1 8.2-1.6 20.7 20.7 0 0 1 6.6 1 19.415 19.415 0 0 1 5.7 3V7.2l8-1.8v57.8Zm-25.2-20.4a13.718 13.718 0 0 0 4 10.1 13.45 13.45 0 0 0 9.8 4.1 14.956 14.956 0 0 0 6.4-1.3 15.954 15.954 0 0 0 4.9-3.6V33.6a14.988 14.988 0 0 0-4.9-3.5 15.271 15.271 0 0 0-6.4-1.3 13.423 13.423 0 0 0-9.9 4 13.806 13.806 0 0 0-3.9 10ZM478.1 63.2v-56h8.4v24h29.8v-24h8.4v56h-8.4V38.8h-29.8v24.4ZM547.2 64a16.483 16.483 0 0 1-10.8-3.5 11.037 11.037 0 0 1-4.2-8.9 10.375 10.375 0 0 1 4.7-9.2 20.76 20.76 0 0 1 11.8-3.2 27.841 27.841 0 0 1 5.8.6 27.374 27.374 0 0 1 5.3 1.6v-4.3a8.143 8.143 0 0 0-2.6-6.5 11.452 11.452 0 0 0-7.4-2.2 20.788 20.788 0 0 0-6 .9 34.616 34.616 0 0 0-6.6 2.6l-3-6a54.169 54.169 0 0 1 8.4-3.1 33.18 33.18 0 0 1 8.3-1.1c5.2 0 9.3 1.3 12.2 3.8s4.4 6.1 4.4 10.8v27h-7.8v-3.5a19.441 19.441 0 0 1-5.8 3.2 23.54 23.54 0 0 1-6.7 1Zm-7.3-12.6a5.646 5.646 0 0 0 2.6 4.8 11.193 11.193 0 0 0 6.6 1.8 16.256 16.256 0 0 0 5.9-1 14.449 14.449 0 0 0 4.9-2.9V47a19.778 19.778 0 0 0-4.8-1.8 24.933 24.933 0 0 0-5.7-.6 11.859 11.859 0 0 0-6.8 1.8 5.728 5.728 0 0 0-2.7 5ZM580.6 53.2v-24H572v-6.7h8.6V12.1l7.9-1.9v12.3h12v6.7h-12v22.1a5.94 5.94 0 0 0 1.4 4.4c.9.9 2.5 1.3 4.6 1.3a23.637 23.637 0 0 0 3-.2 10.857 10.857 0 0 0 2.8-.8v6.7a19.28 19.28 0 0 1-3.8.9 27.484 27.484 0 0 1-3.8.3c-3.9 0-7-.9-9-2.8-2-1.7-3.1-4.4-3.1-7.9Z"></path></g><path d="M127 90.2c12.5 0 30.6-2.6 30.6-17.5a12.678 12.678 0 0 0-.3-3.4L149.8 37c-1.7-7.1-3.2-10.3-15.7-16.6-9.7-5-30.8-13.1-37.1-13.1-5.8 0-7.5 7.5-14.4 7.5-6.7 0-11.6-5.6-17.9-5.6-6 0-9.9 4.1-12.9 12.5 0 0-8.4 23.7-9.5 27.2a4.216 4.216 0 0 0-.3 1.9c0 9.2 36.3 39.4 85 39.4Zm32.5-11.4c1.7 8.2 1.7 9.1 1.7 10.1 0 14-15.7 21.8-36.4 21.8-46.8 0-87.7-27.4-87.7-45.5a17.535 17.535 0 0 1 1.5-7.3C21.8 58.8 0 61.8 0 81c0 31.5 74.6 70.3 133.7 70.3 45.3 0 56.7-20.5 56.7-36.6-.1-12.8-11-27.3-30.9-35.9Z" fill="#e00"></path><path d="M159.5 78.8c1.7 8.2 1.7 9.1 1.7 10.1 0 14-15.7 21.8-36.4 21.8-46.8 0-87.7-27.4-87.7-45.5a17.535 17.535 0 0 1 1.5-7.3l3.7-9.1a4.877 4.877 0 0 0-.3 2c0 9.2 36.3 39.4 85 39.4 12.5 0 30.6-2.6 30.6-17.5a12.678 12.678 0 0 0-.3-3.4Z"></path><path d="M253.5 158.7a2.22 2.22 0 0 1-2.2-2.2V2.2a2.2 2.2 0 0 1 4.4 0v154.2a2.242 2.242 0 0 1-2.2 2.3Z" fill="#111"></path><text data-name="Demo Platform" transform="translate(1186 149)" fill="#111" font-size="82" font-family="'RedHatDisplay', 'Overpass', overpass, helvetica, arial, sans-serif" font-weight="700"><tspan x="-877.892" y="0">Demo Platform</tspan></text></svg></div></a>
+</footer>
+<script src="../_/js/vendor/clipboard.js"></script>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
