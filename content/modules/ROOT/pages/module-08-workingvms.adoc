@@ -117,29 +117,28 @@ To begin, we'll add labels to the virtual machines by modifying their definition
 ==== Label the virtual machines
 
 . From the OpenShift console, navigate to *Virtualization* -> *VirtualMachines* and ensure the migrated VMs successfully imported and are running.
-+
 
 image::module-08-vmexamples/11_Imported_VMs_List.png[link=self, window=blank, width=100%]
-+
+
 
 NOTE: Ensure you select the correct project, *vmexamples* if you completed the *Migrating Existing Virtual Machines* module or *vmimported* if you did not.
 
+
 . Select to the *winweb01* VM and navigate to the *YAML* tab.
-+
+
 . Find the *spec:* section and under the *template.metadata* add the following lines to *labels* section in the VM resources:
-+
 
 [source,yaml,role=execute]
 ----
 env: webapp
 ----
-+
+
 
 IMPORTANT: Make sure to get the indentation exactly right - just like in the screenshot below.
-+
+
 
 image::module-08-vmexamples/12_Imported_VMs_YAML.png[link=self, window=blank, width=100%]
-+
+
 
 . *Repeat* the process for the VM *winweb02*.
 
@@ -150,13 +149,11 @@ NOTE: Ensure the VMs are properly working by accessing to the console tab of eac
 ==== Create the Service
 
 . Navigate to *Networking* -> *Services* and press *Create Service*. 
-+
 
 image::module-08-vmexamples/13_Navigate_Service.png[link=self, window=blank, width=100%]
-+
 
 . Replace the YAML with the following definition
-+
+
 
 [source,yaml,role=execute]
 ----
@@ -173,24 +170,21 @@ spec:
       port: 80
       targetPort: 80
 ----
-+
+
 
 IMPORTANT: Ensure the namespace with your virtual machines, *vmexamples* or *vmimported*, is the one used in the Service YAML.
-+
+
 
 image::module-08-vmexamples/14_Service_YAML.png[link=self, window=blank, width=100%]
-+
 
 . Press *Create*.
 
 . From the details page for the newly created *webapp* Service, locate *Pod selector* link and click it.
-+
 
 image::module-08-vmexamples/15_Imported_VMs_PodSelector.png[link=self, window=blank, width=100%]
-+
+
 
 . Verify the two Windows VMs are properly identified and targeted by the Service.
-+
 
 image::module-08-vmexamples/16_Imported_VMs_Pods.png[link=self, window=blank, width=100%]
 
