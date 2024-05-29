@@ -118,6 +118,7 @@ To begin, we'll add labels to the virtual machines by modifying their definition
 
 . From the OpenShift console, navigate to *Virtualization* -> *VirtualMachines* and ensure the migrated VMs successfully imported and are running.
 +
+
 image::module-08-vmexamples/11_Imported_VMs_List.png[link=self, window=blank, width=100%]
 +
 
@@ -135,8 +136,8 @@ env: webapp
 +
 
 IMPORTANT: Make sure to get the indentation exactly right - just like in the screenshot below.
-
 +
+
 image::module-08-vmexamples/12_Imported_VMs_YAML.png[link=self, window=blank, width=100%]
 +
 
@@ -150,12 +151,13 @@ NOTE: Ensure the VMs are properly working by accessing to the console tab of eac
 
 . Navigate to *Networking* -> *Services* and press *Create Service*. 
 +
+
 image::module-08-vmexamples/13_Navigate_Service.png[link=self, window=blank, width=100%]
 +
 
-
 . Replace the YAML with the following definition
 +
+
 [source,yaml,role=execute]
 ----
 apiVersion: v1
@@ -174,21 +176,24 @@ spec:
 +
 
 IMPORTANT: Ensure the namespace with your virtual machines, *vmexamples* or *vmimported*, is the one used in the Service YAML.
-
 +
+
 image::module-08-vmexamples/14_Service_YAML.png[link=self, window=blank, width=100%]
++
 
 . Press *Create*.
 
 . From the details page for the newly created *webapp* Service, locate *Pod selector* link and click it.
 +
+
 image::module-08-vmexamples/15_Imported_VMs_PodSelector.png[link=self, window=blank, width=100%]
 +
 
 . Verify the two Windows VMs are properly identified and targeted by the Service.
 +
+
 image::module-08-vmexamples/16_Imported_VMs_Pods.png[link=self, window=blank, width=100%]
-+
+
 
 === Create the Route
 
@@ -196,30 +201,40 @@ Now the Windows IIS servers are accessible from within the OpenShift cluster. Ot
 
 . Navigate to *Networking* -> *Routes* in the left navigation menu, verify that you're using the correct project name. Press *Create Route*.
 +
+
 image::module-08-vmexamples/17_Route_Navigation.png[link=self, window=blank, width=100%]
++
 
 . Fill the form using the information below, press *Create* when done.
 +
+
 .. *Name*: *route-webapp*
 .. *Service*: *webapp*
 .. *Target port*: *80 -> 80 (TCP)*
 +
+
 NOTE: OpenShift can automatically (re)encrypt traffic entering the cluster via a Route, however, we don't need to use TLS for this application. The *Secure Route* option should not be checked.
 +
+
 image::module-08-vmexamples/18_Create_Route.png[link=self, window=blank, width=100%]
 
 . Navigate to the address shown in *Location* field
 +
+
 image::module-08-vmexamples/19_Route_Access.png[link=self, window=blank, width=100%]
++
 
 . When the page loads, you will see an error. This is because the Windows web servers are not able to currently connect to the database VM after it's migration.
 +
+
 image::module-08-vmexamples/20_WebApp_Error.png[link=self, window=blank, width=100%]
 +
+
 To fix the connectivity issue, we need to create a Service for the database VM so that it can be accessed by the web servers.
 
 . Once again, navigate to *Networking* -> *Services* and press *Create Service*. Replace the YAML with the following definition:
 +
+
 [source,yaml,role=execute]
 ----
 apiVersion: v1
@@ -241,19 +256,18 @@ NOTE: This time we used the name of the virtual machine to attach it to the serv
 +
 
 image::module-08-vmexamples/21_Database_YAML.png[link=self, window=blank, width=100%]
++
 
 . When the YAML is pasted, click the *Create* button.
 +
 
 IMPORTANT: Ensure the namespace with your virtual machines, *vmexamples* or *vmimported* is the one used in the Service YAML.
-
 +
+
 . Reload the webapp URL and expect to get the proper result
-
 +
+
 image::module-08-vmexamples/22_WebApp_Success.png[link=self, window=blank, width=100%]
-
-
 
 [[expose_db]]
 == Expose the Database Externally
@@ -262,13 +276,16 @@ If you completed the *Exposing apps using a Route* module, the VM is currently a
 
 . Navigate to *Networking* -> *Services* and select the project *vmexamples*
 +
+
 image::module-08-workingvms/23_Create_Service_LB.png[link=self, window=blank, width=100%]
 +
 
 IMPORTANT: If you did not complete the module *Migrating Existing Virtual Machines* you can use pre-existing virtual machines in the *vmimported* project. If you are using the pre-imported virtual machines, please replace all instances of *vmexamples* namespace with *vmimported*.
++
 
 . Press *Create Service* and fill the form with the following code snippet:
 +
+
 [source,yaml,role=execute]
 ----
 apiVersion: v1
@@ -291,21 +308,26 @@ NOTE: Notice the *type* indicated is *LoadBalancer*. Since this cluster has Meta
 +
 
 image::module-08-workingvms/24_Database_LB_YAML.png[link=self, window=blank, width=100%]
++
 
 . Press *Create* and review the *Service* created. Notice the IP address assigned to the load balancer is from the range specified earlier in the lab.
 +
+
 image::module-08-workingvms/25_Database_LB_Service_Created.png[link=self, window=blank, width=100%]
++
 
 . To verify connectivity to the database service via the external IP, use the web terminal by clicking the following icon in the right-top part.
 +
+
 [source,bash,role=execute]
 ----
 curl -s 192.168.123.202:3306 | cut -c1-16       
 ----
 +
+
 .Sample Output
-+
-[%nowrap]
+
+[source,bash]
 ----
 5.5.68-MariaDB
 ----
