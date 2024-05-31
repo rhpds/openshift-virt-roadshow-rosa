@@ -16,7 +16,7 @@ Ecosystem Partner Solutions Include:
 * https://docs.trilio.io/kubernetes/appendix/backup-and-restore-virtual-machine-running-on-openshift-virtualization[*Trilio for Kubernetes*]
 * https://docs.kasten.io/latest/usage/openshift_virtualization.html[*VEEAM Kasten*]
 
-INFO: This is not intended to be an exhaustive list of partners offering a supported backup and recovery solution. Please check with your storage or data protection vendor(s) to determine the compatibility of their product with OpenShift Virtualization.
+NOTE: This is not intended to be an exhaustive list of partners offering a supported backup and recovery solution. Please check with your storage or data protection vendor(s) to determine the compatibility of their product with OpenShift Virtualization.
 
 In this portion of the lab, we will use OADP to perform a virtual machine backup and restore.
 
@@ -78,8 +78,6 @@ spec:
   ttl: 720h0m0s
 ----
 +
-image::module-05-bcdr/05_Create_Backup_YAML.png[link=self, window=blank, width=100%]
-+
 . Click the *Create* button at the bottom.
 
 +
@@ -131,10 +129,10 @@ spec:
   restorePVs: true
 ----
 +
+. Press the *Create* button at the bottom.
++
 image::module-05-bcdr/10_Create_Restore_YAML.png[link=self, window=blank, width=100%]
 +
-. Press the *Create* button at the bottom.
-
 . Wait until you see that the *Status* column changes to *Completed*.
 +
 image::module-05-bcdr/11_Restore_Completed.png[link=self, window=blank, width=100%]
