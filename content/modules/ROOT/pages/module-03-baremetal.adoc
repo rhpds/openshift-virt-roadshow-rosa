@@ -2,7 +2,7 @@
 
 == Introduction
 
-In this portion of the lablab, you will review the physical environment used during this workshop, including an overview of OpenShift deployed to bare metal hosts. This environment runs on bare metal hosts in the Equinix cloud. This review will help provide you with an understanding of how the nodes are configured in the cluster, and what their current hardware capabilities are. You will then be tasked with adding an additional machine and scaling the number of cluster nodes using the Red Hat OpenShift web console.
+In this section, you will review the physical environment used during this workshop, including an overview of OpenShift deployed to bare metal hosts. This environment runs on bare metal hosts in the Equinix cloud. This review will help provide you with an understanding of how the nodes are configured in the cluster, and what their current hardware capabilities are. You will then be tasked with adding a machine and scaling the number of cluster nodes using the Red Hat OpenShift web console.
 
 .*Goals*
 
@@ -88,13 +88,13 @@ When using *Baseboard Management Controller (BMC)* it is possible to manage the 
 +
 image::module-03-baremetal/04_BMHosts.png[link=self, window=blank, width=100%]
 +
-During installation, the *Control Plane* nodes are provisioned by the OpenShift Container Platform installation program (that is why the status is *Externally provisioned*) and when the control plane is ready, the *Worker* nodes are provisioned by cluster itself (hence the status *Provisioned*) and joined to the cluster.
+During installation, the *Control Plane* nodes are provisioned by the OpenShift Container Platform installation program (that is why the status is *Externally provisioned*) and when the control plane is ready, the *Worker* nodes are provisioned by the cluster itself (hence the status *Provisioned*) and joined to the cluster.
 
 . Click on any of the worker nodes to obtain information about the physical (bare metal) node:
 +
 image::module-03-baremetal/05_Worker0_BMHost.png[link=self, window=blank, width=100%]
 +
-The information shown is similar to the *Nodes* one, with the exception is providing information related to the hardware and the physical status of the bare metal node. Using the *Actions* menu, it is possible to manage aspects of the bare metal host, such as restarting or stopping the system using *BMC*.
+The information shown is similar to the *Nodes* page, with the exception of providing information related to the hardware and the physical status of the bare metal node. Using the *Actions* menu, it is possible to manage aspects of the bare metal host, such as restarting or stopping the system using *BMC*.
 
 . Explore the other tabs in the interface to see more details about the hosts, including the network interfaces and disks. Additionally, the host can be *Deprovisioned*, which will result in it being removed from the cluster, RHCOS removed, and the machine marked as ready to configure.
 
@@ -103,7 +103,7 @@ The information shown is similar to the *Nodes* one, with the exception is provi
 
 IMPORTANT: Before you begin this section of the lab, you need to switch to the *openshift-machine-api* project or you will not be able to see the machines, and  machine discovery will not work. You may need to toggle the *Show default projects* switch to see the project in the drop-down list.
 
-In many cases it becomes necessary to add additonal physical nodes to a cluster to meet workload demands. In a virtual deployment of OpenShift, this is as simple as clicking on the appropriate machine set and choosing the scale the number of nodes available, and the hypervisor responds by cloning a VM template and spinning up new workers. In a bare metal environment there are a few more steps involved, but it's still a fairly simple process if you have the hardware available and access to the servers through a BMC that supports the IPMI protocol.
+In many cases it becomes necessary to add additonal physical nodes to a cluster to meet workload demands. In a virtual deployment of OpenShift, this is as simple as clicking on the appropriate machine set and choosing to scale the number of nodes available, and the hypervisor responds by cloning a VM template and spinning up new workers. In a bare metal environment there are a few more steps involved, but it's still a fairly simple process if you have the hardware available and access to the servers through a BMC that supports the IPMI protocol.
 
 To begin this process we are going to return to the bare metal hosts screen we reviewed earlier:
 
