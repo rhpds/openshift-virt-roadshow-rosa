@@ -20,7 +20,7 @@ By default pre-configured templates provided by Red Hat OpenShift Virtualization
 +
 image::module-07-tempinst/01_Template_List.png[link=self, window=blank, width=100%]
 +
-. In the search bar type in *centos9* and in the list of templates that appear find the template for *centos-stream9-server-large*. 
+. In the search bar type in *centos9* and in the list of templates that appear find the template for *centos-stream9-server-large*.
 +
 image::module-07-tempinst/02_Search_Centos9.png[link=self, window=blank, width=100%]
 +
@@ -43,7 +43,8 @@ image::module-07-tempinst/05_Clone_Details.png[link=self, window=blank, width=10
 . A new window will pop out where you can edit the amount of CPU and Memory. For our XL template set the value of CPUs to 4, and Memory to 16 GiB, and click the *Save* button.
 +
 image::module-07-tempinst/06_Edit_CPU_Mem.png[link=self, window=blank, width=100%]
-+
+
+////
 . Navigate to the *Network Interfaces* tab, to the right of the *default* interface, select the three-dot menu and the edit option.
 +
 image::module-07-tempinst/07_Edit_Network.png[link=self, window=blank, width=100%]
@@ -51,7 +52,8 @@ image::module-07-tempinst/07_Edit_Network.png[link=self, window=blank, width=100
 . When the *Edit network interface* menu appears, set the *Network* value to the *vmexamples/vlan0* network, and click the *Save* button.
 +
 image::module-07-tempinst/08_Edit_Net_Int.png[link=self, window=blank, width=100%]
-+
+////
+
 . Next click on the *Scripts* tab at the top, and in the section called *Cloud-init* click the *Edit* button.
 +
 image::module-07-tempinst/09_Scripts_CloudInit.png[link=self, window=blank, width=100%]
@@ -78,7 +80,10 @@ image::module-07-tempinst/11_User_Templates.png[link=self, window=blank, width=1
 +
 image::module-07-tempinst/12_Quick_Create_Template.png[link=self, window=blank, width=100%]
 +
-. When the virtual machine boots you can see on the *Overview* page that it was created from our template, and has the system resources we defined, and is already attached to the *vmexamples/vlan0* network with an assigned IP address.
+. When the virtual machine boots you can see on the *Overview* page that it was created from our template, and has the system resources we defined, and is already attached to the
+Pod
+// *vmexamples/vlan0*
+network with an assigned IP address.
 +
 image::module-07-tempinst/13_VM_From_Template.png[link=self, window=blank, width=100%]
 +
@@ -94,6 +99,8 @@ sudo mysql -u root
 ----
 +
 image::module-07-tempinst/15_MariaDB_Login.png[link=self, window=blank, width=100%]
+
+. Hit `Ctrl-D` twice to log out of the VM.
 
 [[create_win]]
 == Create a Windows VM Template
@@ -120,7 +127,7 @@ image::module-07-tempinst/18_Windows_2k19_Dialog.png[link=self, window=blank, wi
 .. Specify the name *windows*
 .. Enable the checkbox *Boot from CD*
 .. Choose URL *(creates PVC)* from the drop-down menu
-.. Specify the url: http://192.168.123.100:81/Windows2019.iso
+.. Specify the url: https://www.opentlc.com/download/ocp4_virt_foundations/Windows2019.iso
 .. Reduce the CD disk size to *5 GiB*
 .. Keep the *Disk source* size disk to the default value *60 GiB*
 .. Ensure the *Mount Windows drivers disk* checkbox is enabled. **This is required to install Windows systems, which will provide the drivers for VirtIO.**
@@ -299,7 +306,7 @@ image::module-07-tempinst/25_Windows_2k19_Provisioning.png[link=self, window=bla
 +
 image::module-07-tempinst/26_Windows_2k19_Console.png[link=self, window=blank, width=100%]
 +
-IMPORTANT: The VM is marked as "Not migratable" because a CD-ROM disk is attached. 
+IMPORTANT: The VM is marked as "Not migratable" because a CD-ROM disk is attached.
 +
 . Once the VM installation process is complete, go ahead and power it off with the stop button. We can now take a snapshot of the root disk, and use that to create a bootable volume template that we can use to boot other Windows 2k19 machines.
 +
@@ -324,7 +331,7 @@ In order to simplify the deployment process for virtual machines, starting with 
 +
 image::module-07-tempinst/30_Left_Menu_Catalog.png[link=self, window=blank, width=100%]
 +
-. The first step to using an instance type is to select a volume to boot from. Similar to the templates that provide boot sources, those boot sources are available to use for an instance type, or you can upload your own with the *Add volume* button. 
+. The first step to using an instance type is to select a volume to boot from. Similar to the templates that provide boot sources, those boot sources are available to use for an instance type, or you can upload your own with the *Add volume* button.
 
 . Click on *rhel9* to create a VM with that boot source.
 +
@@ -351,7 +358,7 @@ image::module-07-tempinst/34_VM_Details.png[link=self, window=blank, width=100%]
 +
 . You will be directed to the virtual machine overview page, and see that the VM provisioned using an instance type is now up and running.
 +
-image::module-07-tempinst/35_VM_Overview.png[link=self, window=blank, width=100%] 
+image::module-07-tempinst/35_VM_Overview.png[link=self, window=blank, width=100%]
 
 == Summary
 

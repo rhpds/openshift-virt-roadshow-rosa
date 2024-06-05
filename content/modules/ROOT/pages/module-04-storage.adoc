@@ -25,7 +25,7 @@ In this lab, we are going to take a closer look at the storage behind the virtua
 .. The PVC has a requested capacity and size of 30GiB
 .. The Access mode of the PVC is ReadWriteMany (RWX)
 .. The Volume mode of the PVC is Block
-.. The volume is using the *ocs-storagecluster-ceph-rbd-virtualization* storage class.
+.. The volume is using the *ocs-storagecluster-ceph-rbd* storage class.
 +
 image::module-04-storage/02_Fedora01_PVC_Details.png[link=self, window=blank, width=100%]
 
