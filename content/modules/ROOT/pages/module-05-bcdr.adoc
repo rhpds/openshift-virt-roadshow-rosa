@@ -2,7 +2,7 @@
 
 == Introduction
 
-Data Protection is a major topic of conversation when it comes to any enterprise workload, and there are no shortage of options currently available for backup and recovery of virtual machines with OpenShift Virtualization. Many of these solutions function in the same manner at which they protect pods in OpenShift. They do this by taking a backup of the virtual machine, or a namespace containing multiple virtual machines and store it remotely in an object storage bucket. These backups usually also include the persistent storage volume, alongside the metadata and custom resources that define the virtual machine. 
+Data Protection is a major topic of conversation when it comes to any enterprise workload, and there are no shortage of options currently available for backup and recovery of virtual machines with OpenShift Virtualization. Many of these solutions function in the same manner at which they protect pods in OpenShift. They do this by taking a backup of the virtual machine, or a namespace containing multiple virtual machines and store it remotely in an object storage bucket. These backups usually also include the persistent storage volume, alongside the metadata and custom resources that define the virtual machine.
 
 Red Hat Solutions Include:
 
@@ -35,7 +35,7 @@ image::module-05-bcdr/01_Overview.png[link=self, window=blank, width=100%]
 +
 image::module-05-bcdr/02_DPA.png[link=self, window=blank, width=100%]
 
-. Click on *oadp-dpa* to see the details of the _DataProtectionApplication_ and then click on the *YAML* button at the top to see how it is configured. 
+. Click on *oadp-dpa* to see the details of the _DataProtectionApplication_ and then click on the *YAML* button at the top to see how it is configured.
 +
 image::module-05-bcdr/03_OADP_YAML.png[link=self, window=blank, width=100%]
 +
@@ -102,7 +102,7 @@ image::module-05-bcdr/07_Delete_VM.png[link=self, window=blank, width=100%]
 +
 image::module-05-bcdr/08_Confirm_Delete.png[link=self, window=blank, width=100%]
 +
-. Go back to *Operators* -> *Installed Operators* and select *OADP Operator*. 
+. Go back to *Operators* -> *Installed Operators* and select *OADP Operator*.
 
 . Use the horizontal navigation bar to locate the the *Restore* tab, click the *Restore* tab, and then press *Create Restore*.
 +
@@ -119,7 +119,7 @@ metadata:
   namespace: openshift-adp
 spec:
   backupName: backup-fedora02
-  includedResources: [] 
+  includedResources: []
   excludedResources:
   - nodes
   - events
@@ -141,7 +141,6 @@ image::module-05-bcdr/11_Restore_Completed.png[link=self, window=blank, width=10
 +
 image::module-05-bcdr/12_VM_Restored.png[link=self, window=blank, width=100%]
 
-
-== Summary 
+== Summary
 
 Protecting virtual machines is a critical aspect of a virtualization platform. OpenShift Virtualization provides multiple methods that enable native protection, for example using OADP, or allowing storage and backup partners to integrate their offerings. If you have questions about how to protect virtual machines, please don't hesitate to ask the proctors for the workshop or reach out to your vendor to determine their compatibility with OpenShift Virtualization.
