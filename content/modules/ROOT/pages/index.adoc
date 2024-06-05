@@ -90,7 +90,7 @@ Administrator login is available with:
 
 To the right you see a Terminal window. Out of the box you are logged in as a service account - that can't do much. However you can log into OpenShift as the cluster administrator using the following command (hit `y` when prompted if you want to connect to an insecure server):
 
-[source,sh,attributes=subs,role=execute]
+[source,sh,subs="attributes",role=execute]
 ----
 oc login -u {openshift_cluster_admin_username} -p {openshift_cluster_admin_password} {openshift_api_server_url}
 ----
