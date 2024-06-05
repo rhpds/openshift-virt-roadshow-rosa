@@ -17,8 +17,8 @@ Your OpenShift cluster console is available {openshift_web_console}[here^].
 
 Administrator login is available with:
 
-* *User:* {openshift_admin_user}
-* *Password:* {openshift_admin_password}
+* *User:* {openshift_cluster_admin_username}
+* *Password:* {openshift_cluster_admin_password}
 
 [[create_project]]
 == Create a New Project
