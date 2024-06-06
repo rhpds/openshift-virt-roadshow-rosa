@@ -100,8 +100,6 @@ By default, virtual machines are connected to the SDN, which is a convenient and
 
 IMPORTANT: If you have not completed the module *Migrating Existing Virtual Machines*, it is recommended that you do that module first. If you have not completed it, or the migration process is still pending, you can use pre-existing virtual machines that have been prepared for you, which are available in the *vmimported* project. If you are using these pre-imported virtual machines, please replace all instances of the *vmexamples* namespace with *vmimported* in the examples below.
 
-== Using a Service and Route to expose an application
-
 === Introduction to Services
 
 The *Service* identifies the source/target for traffic, and directs clients to, the endpoints based on labels. Currently, the VMs do not have a label assigned yet.
@@ -211,6 +209,7 @@ image::module-08-workingvms/17_Route_Navigation.png[link=self, window=blank, wid
 .. *Service*: *webapp*
 .. *Target port*: *80 -> 80 (TCP)*
 .. *Secure Route*: *Enabled*
+.. *TLS termination*: *Edge*
 +
 
 
@@ -224,6 +223,9 @@ image::module-08-workingvms/19_Route_Access.png[link=self, window=blank, width=1
 +
 
 . When the page loads, you will see an error. This is because the Windows web servers are not able to currently connect to the database VM after it's migration.
++
+
+image::module-08-workingvms/20_WebApp_Error.png[link=self, window=blank, width=100%]
 +
 
 NOTE: To fix the connectivity issue, we need to create a Service for the database VM so that it can be accessed by the web servers.
@@ -269,7 +271,7 @@ image::module-08-workingvms/22_WebApp_Success.png[link=self, window=blank, width
 [[expose_db]]
 == Expose the Database Externally
 
-If you completed the *Exposing apps using a Route* module, the VM is currently accessible from inside the cluster using the Service previously created. In this task, we will expose port 3306 outside of the cluster, making the database available to other virtual machines and consumers not hosted in OpenShift.
+If you completed the *Exposing an Application with a Service/Route* module, the VM is currently accessible from inside the cluster using the Service previously created. In this task, we will expose port 3306 outside of the cluster, making the database available to other virtual machines and consumers not hosted in OpenShift.
 
 . Navigate to *Networking* -> *Services* and select the project *vmexamples*
 +
@@ -313,19 +315,20 @@ image::module-08-workingvms/24_Database_LB_YAML.png[link=self, window=blank, wid
 image::module-08-workingvms/25_Database_LB_Service_Created.png[link=self, window=blank, width=100%]
 +
 
-. To verify connectivity to the database service via the external IP, use the web terminal by clicking the following icon in the right-top part.
+. To verify connectivity to the database service via the external IP, use the terminal to the right authenticate to the database at it's exposed LB address with the following credentials
+
+
 +
 
 [source,bash,role=execute]
 ----
-curl -s 192.168.123.202:3306 | cut -c1-16       
+mysql -u root -p        
 ----
 +
 
-.Sample Output
 
-[source,bash]
-----
-5.5.68-MariaDB
-----
+== Summary
 
+In this module you were able to experience working with the virtual machines that you migrated into the OpenShift Virtualization environment from VMware vSphere by making them accessible outside of the cluster in different manners.
+
+I hope you have enjoyed the OpenShift Virtualization Roadshow and this lab that accompanied it. Please fill out the survey link that your proctor has made available to provide feedback on your experience.
