@@ -317,15 +317,23 @@ image::module-08-workingvms/25_Database_LB_Service_Created.png[link=self, window
 
 . To verify connectivity to the database service via the external IP, use the terminal to the right authenticate to the database at it's exposed LB address with the following credentials
 
-
+.. *Username*: *root*
+.. *Password*: *R3dh4t1!*
 +
 
 [source,bash,role=execute]
 ----
-mysql -u root -p        
+mysql -u root -p -h 192.168.123.202       
 ----
 +
 
+NOTE: Be sure to replace the ip address in the sample above with the address being advertised by MetalLB.
++
+
+When successful, you should be able to login to the database and view the mysql prompt.
++
+
+image::module-08-workingvms/26_DB_Login.png[link=self, window=blank, width=100%]
 
 == Summary
 

@@ -294,9 +294,9 @@
 </li>
 <li>
 <p>Select the tab <strong>MetalLB</strong> to ensure the deployment is installed and configured correctly</p>
-<div class="imageblock unresolved">
+<div class="imageblock">
 <div class="content">
-<a class="image" href="module-08-workingvms/04_Review_Operator_MetalLB.png" target="blank"><img src="module-08-workingvms/04_Review_Operator_MetalLB.png" alt="04 Review Operator MetalLB" width="100%"></a>
+<a class="image" href="_images/module-08-workingvms/04_Review_MetalLB.png" target="blank"><img src="_images/module-08-workingvms/04_Review_MetalLB.png" alt="04 Review MetalLB" width="100%"></a>
 </div>
 </div>
 </li>
@@ -338,9 +338,9 @@
 </li>
 <li>
 <p>Scroll down and press <strong>Create</strong>. You will be returned to the main operator page where you will see that the <strong>IPAddressPool</strong> is now created.</p>
-<div class="imageblock unresolved">
+<div class="imageblock">
 <div class="content">
-<a class="image" href="module-08-workingvms/07_IPAddressPool_Complete.png" target="blank"><img src="module-08-workingvms/07_IPAddressPool_Complete.png" alt="07 IPAddressPool Complete" width="100%"></a>
+<a class="image" href="_images/module-08-workingvms/07_IPAddressPool_Complete.png" target="blank"><img src="_images/module-08-workingvms/07_IPAddressPool_Complete.png" alt="07 IPAddressPool Complete" width="100%"></a>
 </div>
 </div>
 </li>
@@ -404,11 +404,6 @@ If you have not completed the module <strong>Migrating Existing Virtual Machines
 </tr>
 </table>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_using_a_service_and_route_to_expose_an_application"><a class="anchor" href="#_using_a_service_and_route_to_expose_an_application"></a>Using a Service and Route to expose an application</h2>
-<div class="sectionbody">
 <div class="sect2">
 <h3 id="_introduction_to_services"><a class="anchor" href="#_introduction_to_services"></a>Introduction to Services</h3>
 <div class="paragraph">
@@ -433,22 +428,17 @@ If you have not completed the module <strong>Migrating Existing Virtual Machines
 <div class="paragraph">
 <p>To begin, we&#8217;ll add labels to the virtual machines by modifying their definition in the OpenShift Virtualization GUI.</p>
 </div>
-<div class="sect3">
-<h4 id="_label_the_virtual_machines"><a class="anchor" href="#_label_the_virtual_machines"></a>Label the virtual machines</h4>
+</div>
+<div class="sect2">
+<h3 id="_label_the_virtual_machines"><a class="anchor" href="#_label_the_virtual_machines"></a>Label the virtual machines</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>From the OpenShift console, navigate to <strong>Virtualization</strong> &#8594; <strong>VirtualMachines</strong> and ensure the migrated VMs successfully imported and are running.</p>
-</li>
-</ol>
-</div>
-<div class="imageblock unresolved">
+<div class="imageblock">
 <div class="content">
-<a class="image" href="module-08-vmexamples/11_Imported_VMs_List.png" target="blank"><img src="module-08-vmexamples/11_Imported_VMs_List.png" alt="11 Imported VMs List" width="100%"></a>
+<a class="image" href="_images/module-08-workingvms/11_Imported_VMs_List.png" target="blank"><img src="_images/module-08-workingvms/11_Imported_VMs_List.png" alt="11 Imported VMs List" width="100%"></a>
 </div>
-</div>
-<div class="paragraph">
-<p>+</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -462,26 +452,16 @@ Ensure you select the correct project, <strong>vmexamples</strong> if you comple
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>+</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>Select to the <strong>winweb01</strong> VM and navigate to the <strong>YAML</strong> tab.</p>
 </li>
 <li>
 <p>Find the <strong>spec:</strong> section and under the <strong>template.metadata</strong> add the following lines to <strong>labels</strong> section in the VM resources:</p>
-</li>
-</ol>
-</div>
 <div class="listingblock execute">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">env: webapp</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>+</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -495,27 +475,17 @@ Make sure to get the indentation exactly right - just like in the screenshot bel
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>+</p>
-</div>
-<div class="imageblock unresolved">
+<div class="imageblock">
 <div class="content">
-<a class="image" href="module-08-vmexamples/12_Imported_VMs_YAML.png" target="blank"><img src="module-08-vmexamples/12_Imported_VMs_YAML.png" alt="12 Imported VMs YAML" width="100%"></a>
+<a class="image" href="_images/module-08-workingvms/12_Imported_VMs_YAML.png" target="blank"><img src="_images/module-08-workingvms/12_Imported_VMs_YAML.png" alt="12 Imported VMs YAML" width="100%"></a>
 </div>
 </div>
-<div class="paragraph">
-<p>+</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p><strong>Repeat</strong> the process for the VM <strong>winweb02</strong>.</p>
 </li>
 <li>
 <p>Start, or restart if already running, the <strong>winweb01</strong> and <strong>winweb02</strong> virtual machines.</p>
-</li>
-</ol>
-</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -528,28 +498,24 @@ Ensure the VMs are properly working by accessing to the console tab of each VM.
 </tr>
 </table>
 </div>
+</li>
+</ol>
 </div>
-<div class="sect3">
-<h4 id="_create_the_service"><a class="anchor" href="#_create_the_service"></a>Create the Service</h4>
+</div>
+<div class="sect2">
+<h3 id="_create_the_service"><a class="anchor" href="#_create_the_service"></a>Create the Service</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Navigate to <strong>Networking</strong> &#8594; <strong>Services</strong> and press <strong>Create Service</strong>.</p>
-</li>
-</ol>
-</div>
-<div class="imageblock unresolved">
+<div class="imageblock">
 <div class="content">
-<a class="image" href="module-08-vmexamples/13_Navigate_Service.png" target="blank"><img src="module-08-vmexamples/13_Navigate_Service.png" alt="13 Navigate Service" width="100%"></a>
+<a class="image" href="_images/module-08-workingvms/13_Navigate_Service.png" target="blank"><img src="_images/module-08-workingvms/13_Navigate_Service.png" alt="13 Navigate Service" width="100%"></a>
 </div>
 </div>
-<div class="paragraph">
-<p>+
-. Replace the YAML with the following definition</p>
-</div>
-<div class="paragraph">
-<p>+</p>
-</div>
+</li>
+<li>
+<p>Replace the YAML with the following definition</p>
 <div class="listingblock execute">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">apiVersion: v1
@@ -566,9 +532,6 @@ spec:
       targetPort: 80</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>+</p>
-</div>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -581,48 +544,32 @@ Ensure the namespace with your virtual machines, <strong>vmexamples</strong> or 
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>+</p>
-</div>
-<div class="imageblock unresolved">
+<div class="imageblock">
 <div class="content">
-<a class="image" href="module-08-vmexamples/14_Service_YAML.png" target="blank"><img src="module-08-vmexamples/14_Service_YAML.png" alt="14 Service YAML" width="100%"></a>
+<a class="image" href="_images/module-08-workingvms/14_Service_YAML.png" target="blank"><img src="_images/module-08-workingvms/14_Service_YAML.png" alt="14 Service YAML" width="100%"></a>
 </div>
 </div>
-<div class="paragraph">
-<p>+
-. Press <strong>Create</strong>.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
+<li>
+<p>Press <strong>Create</strong>.</p>
+</li>
 <li>
 <p>From the details page for the newly created <strong>webapp</strong> Service, locate <strong>Pod selector</strong> link and click it.</p>
-</li>
-</ol>
-</div>
-<div class="imageblock unresolved">
+<div class="imageblock">
 <div class="content">
-<a class="image" href="module-08-vmexamples/15_Imported_VMs_PodSelector.png" target="blank"><img src="module-08-vmexamples/15_Imported_VMs_PodSelector.png" alt="15 Imported VMs PodSelector" width="100%"></a>
+<a class="image" href="_images/module-08-workingvms/15_Imported_VMs_PodSelector.png" target="blank"><img src="_images/module-08-workingvms/15_Imported_VMs_PodSelector.png" alt="15 Imported VMs PodSelector" width="100%"></a>
 </div>
 </div>
-<div class="paragraph">
-<p>+</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>Verify the two Windows VMs are properly identified and targeted by the Service.</p>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="_images/module-08-workingvms/16_Imported_VMs_Pods.png" target="blank"><img src="_images/module-08-workingvms/16_Imported_VMs_Pods.png" alt="16 Imported VMs Pods" width="100%"></a>
+</div>
+</div>
 </li>
 </ol>
-</div>
-<div class="imageblock unresolved">
-<div class="content">
-<a class="image" href="module-08-vmexamples/16_Imported_VMs_Pods.png" target="blank"><img src="module-08-vmexamples/16_Imported_VMs_Pods.png" alt="16 Imported VMs Pods" width="100%"></a>
-</div>
-</div>
-<div class="paragraph">
-<p>+</p>
-</div>
 </div>
 </div>
 <div class="sect2">
@@ -634,9 +581,9 @@ Ensure the namespace with your virtual machines, <strong>vmexamples</strong> or 
 <ol class="arabic">
 <li>
 <p>Navigate to <strong>Networking</strong> &#8594; <strong>Routes</strong> in the left navigation menu, verify that you&#8217;re using the correct project name. Press <strong>Create Route</strong>.</p>
-<div class="imageblock unresolved">
+<div class="imageblock">
 <div class="content">
-<a class="image" href="module-08-vmexamples/17_Route_Navigation.png" target="blank"><img src="module-08-vmexamples/17_Route_Navigation.png" alt="17 Route Navigation" width="100%"></a>
+<a class="image" href="_images/module-08-workingvms/17_Route_Navigation.png" target="blank"><img src="_images/module-08-workingvms/17_Route_Navigation.png" alt="17 Route Navigation" width="100%"></a>
 </div>
 </div>
 </li>
@@ -652,32 +599,33 @@ Ensure the namespace with your virtual machines, <strong>vmexamples</strong> or 
 </li>
 <li>
 <p><strong>Target port</strong>: <strong>80 &#8594; 80 (TCP)</strong></p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-OpenShift can automatically (re)encrypt traffic entering the cluster via a Route, however, we don&#8217;t need to use TLS for this application. The <strong>Secure Route</strong> option should not be checked.
-</td>
-</tr>
-</table>
-</div>
-<div class="imageblock unresolved">
-<div class="content">
-<a class="image" href="module-08-vmexamples/18_Create_Route.png" target="blank"><img src="module-08-vmexamples/18_Create_Route.png" alt="18 Create Route" width="100%"></a>
-</div>
-</div>
+</li>
+<li>
+<p><strong>Secure Route</strong>: <strong>Enabled</strong></p>
+</li>
+<li>
+<p><strong>TLS termination</strong>: <strong>Edge</strong></p>
 </li>
 </ol>
 </div>
 </li>
-<li>
-<p>Navigate to the address shown in <strong>Location</strong> field</p>
+</ol>
+</div>
 <div class="imageblock unresolved">
 <div class="content">
-<a class="image" href="module-08-vmexamples/19_Route_Access.png" target="blank"><img src="module-08-vmexamples/19_Route_Access.png" alt="19 Route Access" width="100%"></a>
+<a class="image" href="module-08-workingvms/18_Create_Route.png" target="blank"><img src="module-08-workingvms/18_Create_Route.png" alt="18 Create Route" width="100%"></a>
+</div>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Navigate to the address shown in <strong>Location</strong> field</p>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="_images/module-08-workingvms/19_Route_Access.png" target="blank"><img src="_images/module-08-workingvms/19_Route_Access.png" alt="19 Route Access" width="100%"></a>
 </div>
 </div>
 </li>
@@ -685,11 +633,20 @@ OpenShift can automatically (re)encrypt traffic entering the cluster via a Route
 <p>When the page loads, you will see an error. This is because the Windows web servers are not able to currently connect to the database VM after it&#8217;s migration.</p>
 <div class="imageblock unresolved">
 <div class="content">
-<a class="image" href="module-08-vmexamples/20_WebApp_Error.png" target="blank"><img src="module-08-vmexamples/20_WebApp_Error.png" alt="20 WebApp Error" width="100%"></a>
+<a class="image" href="module-08-workingvms/20_WebApp_Error.png" target="blank"><img src="module-08-workingvms/20_WebApp_Error.png" alt="20 WebApp Error" width="100%"></a>
 </div>
 </div>
-<div class="paragraph">
-<p>To fix the connectivity issue, we need to create a Service for the database VM so that it can be accessed by the web servers.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To fix the connectivity issue, we need to create a Service for the database VM so that it can be accessed by the web servers.
+</td>
+</tr>
+</table>
 </div>
 </li>
 <li>
@@ -722,9 +679,9 @@ This time we used the name of the virtual machine to attach it to the service we
 </tr>
 </table>
 </div>
-<div class="imageblock unresolved">
+<div class="imageblock">
 <div class="content">
-<a class="image" href="module-08-vmexamples/21_Database_YAML.png" target="blank"><img src="module-08-vmexamples/21_Database_YAML.png" alt="21 Database YAML" width="100%"></a>
+<a class="image" href="_images/module-08-workingvms/21_Database_YAML.png" target="blank"><img src="_images/module-08-workingvms/21_Database_YAML.png" alt="21 Database YAML" width="100%"></a>
 </div>
 </div>
 </li>
@@ -747,7 +704,7 @@ Ensure the namespace with your virtual machines, <strong>vmexamples</strong> or 
 <p>Reload the webapp URL and expect to get the proper result</p>
 <div class="imageblock unresolved">
 <div class="content">
-<a class="image" href="module-08-vmexamples/22_WebApp_Success.png" target="blank"><img src="module-08-vmexamples/22_WebApp_Success.png" alt="22 WebApp Success" width="100%"></a>
+<a class="image" href="module-08-workingvms/22_WebApp_Success.png" target="blank"><img src="module-08-workingvms/22_WebApp_Success.png" alt="22 WebApp Success" width="100%"></a>
 </div>
 </div>
 </li>
@@ -760,7 +717,7 @@ Ensure the namespace with your virtual machines, <strong>vmexamples</strong> or 
 <h2 id="expose_db"><a class="anchor" href="#expose_db"></a>Expose the Database Externally</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you completed the <strong>Exposing apps using a Route</strong> module, the VM is currently accessible from inside the cluster using the Service previously created. In this task, we will expose port 3306 outside of the cluster, making the database available to other virtual machines and consumers not hosted in OpenShift.</p>
+<p>If you completed the <strong>Exposing an Application with a Service/Route</strong> module, the VM is currently accessible from inside the cluster using the Service previously created. In this task, we will expose port 3306 outside of the cluster, making the database available to other virtual machines and consumers not hosted in OpenShift.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -830,20 +787,55 @@ Notice the <strong>type</strong> indicated is <strong>LoadBalancer</strong>. Sin
 </div>
 </li>
 <li>
-<p>To verify connectivity to the database service via the external IP, use the web terminal by clicking the following icon in the right-top part.</p>
+<p>To verify connectivity to the database service via the external IP, use the terminal to the right authenticate to the database at it&#8217;s exposed LB address with the following credentials</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong>Username</strong>: <strong>root</strong></p>
+</li>
+<li>
+<p><strong>Password</strong>: <strong>R3dh4t1!</strong></p>
 <div class="listingblock execute">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -s 192.168.123.202:3306 | cut -c1-16</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mysql -u root -p -h 192.168.123.202</code></pre>
 </div>
 </div>
-<div class="listingblock">
-<div class="title">Sample Output</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Be sure to replace the ip address in the sample above with the address being advertised by MetalLB.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When successful, you should be able to login to the database and view the mysql prompt.</p>
+</div>
+<div class="imageblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">5.5.68-MariaDB</code></pre>
+<a class="image" href="_images/module-08-workingvms/26_DB_Login.png" target="blank"><img src="_images/module-08-workingvms/26_DB_Login.png" alt="26 DB Login" width="100%"></a>
 </div>
 </div>
 </li>
 </ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_summary"><a class="anchor" href="#_summary"></a>Summary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this module you were able to experience working with the virtual machines that you migrated into the OpenShift Virtualization environment from VMware vSphere by making them accessible outside of the cluster in different manners.</p>
+</div>
+<div class="paragraph">
+<p>I hope you have enjoyed the OpenShift Virtualization Roadshow and this lab that accompanied it. Please fill out the survey link that your proctor has made available to provide feedback on your experience.</p>
 </div>
 </div>
 </div>

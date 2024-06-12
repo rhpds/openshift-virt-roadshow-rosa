@@ -207,7 +207,7 @@
 <h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In this portion of the lablab, you will review the physical environment used during this workshop, including an overview of OpenShift deployed to bare metal hosts. This environment runs on bare metal hosts in the Equinix cloud. This review will help provide you with an understanding of how the nodes are configured in the cluster, and what their current hardware capabilities are. You will then be tasked with adding an additional machine and scaling the number of cluster nodes using the Red Hat OpenShift web console.</p>
+<p>In this section, you will review the physical environment used during this workshop, including an overview of OpenShift deployed to bare metal hosts. This environment runs on bare metal hosts in the Equinix cloud. This review will help provide you with an understanding of how the nodes are configured in the cluster, and what their current hardware capabilities are. You will then be tasked with adding a machine and scaling the number of cluster nodes using the Red Hat OpenShift web console.</p>
 </div>
 <div class="ulist">
 <div class="title"><strong>Goals</strong></div>
@@ -425,7 +425,7 @@ At least one physical node is required for OpenShift Virtualization, "nesting" a
 </div>
 </div>
 <div class="paragraph">
-<p>During installation, the <strong>Control Plane</strong> nodes are provisioned by the OpenShift Container Platform installation program (that is why the status is <strong>Externally provisioned</strong>) and when the control plane is ready, the <strong>Worker</strong> nodes are provisioned by cluster itself (hence the status <strong>Provisioned</strong>) and joined to the cluster.</p>
+<p>During installation, the <strong>Control Plane</strong> nodes are provisioned by the OpenShift Container Platform installation program (that is why the status is <strong>Externally provisioned</strong>) and when the control plane is ready, the <strong>Worker</strong> nodes are provisioned by the cluster itself (hence the status <strong>Provisioned</strong>) and joined to the cluster.</p>
 </div>
 </li>
 <li>
@@ -436,7 +436,7 @@ At least one physical node is required for OpenShift Virtualization, "nesting" a
 </div>
 </div>
 <div class="paragraph">
-<p>The information shown is similar to the <strong>Nodes</strong> one, with the exception is providing information related to the hardware and the physical status of the bare metal node. Using the <strong>Actions</strong> menu, it is possible to manage aspects of the bare metal host, such as restarting or stopping the system using <strong>BMC</strong>.</p>
+<p>The information shown is similar to the <strong>Nodes</strong> page, with the exception of providing information related to the hardware and the physical status of the bare metal node. Using the <strong>Actions</strong> menu, it is possible to manage aspects of the bare metal host, such as restarting or stopping the system using <strong>BMC</strong>.</p>
 </div>
 </li>
 <li>
@@ -462,7 +462,7 @@ Before you begin this section of the lab, you need to switch to the <strong>open
 </table>
 </div>
 <div class="paragraph">
-<p>In many cases it becomes necessary to add additonal physical nodes to a cluster to meet workload demands. In a virtual deployment of OpenShift, this is as simple as clicking on the appropriate machine set and choosing the scale the number of nodes available, and the hypervisor responds by cloning a VM template and spinning up new workers. In a bare metal environment there are a few more steps involved, but it&#8217;s still a fairly simple process if you have the hardware available and access to the servers through a BMC that supports the IPMI protocol.</p>
+<p>In many cases it becomes necessary to add additonal physical nodes to a cluster to meet workload demands. In a virtual deployment of OpenShift, this is as simple as clicking on the appropriate machine set and choosing to scale the number of nodes available, and the hypervisor responds by cloning a VM template and spinning up new workers. In a bare metal environment there are a few more steps involved, but it&#8217;s still a fairly simple process if you have the hardware available and access to the servers through a BMC that supports the IPMI protocol.</p>
 </div>
 <div class="paragraph">
 <p>To begin this process we are going to return to the bare metal hosts screen we reviewed earlier:</p>

@@ -241,8 +241,17 @@
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>INFO: This is not intended to be an exhaustive list of partners offering a supported backup and recovery solution. Please check with your storage or data protection vendor(s) to determine the compatibility of their product with OpenShift Virtualization.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This is not intended to be an exhaustive list of partners offering a supported backup and recovery solution. Please check with your storage or data protection vendor(s) to determine the compatibility of their product with OpenShift Virtualization.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>In this portion of the lab, we will use OADP to perform a virtual machine backup and restore.</p>
@@ -348,11 +357,6 @@ spec:
   ttl: 720h0m0s</code></pre>
 </div>
 </div>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="_images/module-05-bcdr/05_Create_Backup_YAML.png" target="blank"><img src="_images/module-05-bcdr/05_Create_Backup_YAML.png" alt="05 Create Backup YAML" width="100%"></a>
-</div>
-</div>
 </li>
 <li>
 <p>Click the <strong>Create</strong> button at the bottom.</p>
@@ -442,14 +446,14 @@ spec:
   restorePVs: true</code></pre>
 </div>
 </div>
+</li>
+<li>
+<p>Press the <strong>Create</strong> button at the bottom.</p>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="_images/module-05-bcdr/10_Create_Restore_YAML.png" target="blank"><img src="_images/module-05-bcdr/10_Create_Restore_YAML.png" alt="10 Create Restore YAML" width="100%"></a>
 </div>
 </div>
-</li>
-<li>
-<p>Press the <strong>Create</strong> button at the bottom.</p>
 </li>
 <li>
 <p>Wait until you see that the <strong>Status</strong> column changes to <strong>Completed</strong>.</p>
