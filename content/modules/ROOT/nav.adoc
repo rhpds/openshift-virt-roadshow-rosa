@@ -12,7 +12,7 @@
 ** xref:module-02-mtv.adoc#prerequisites[Prerequisites for Migrations]
 ** xref:module-02-mtv.adoc#migrating_vms[Migrating Virtual Machines from VMware]
 
-* xref:module-03-baremetal.adoc[3. Bare Metal Management ]
+* xref:module-03-baremetal.adoc[3. Bare Metal Infrastructure Management ]
 ** xref:module-03-baremetal.adoc#review_nodes[Review Nodes and Machines]
 ** xref:module-03-baremetal.adoc#review_hosts[Review Bare Metal Hosts]
 ** xref:module-03-baremetal.adoc#scaling_cluster[Scaling the Cluster with a New Bare Metal Host]

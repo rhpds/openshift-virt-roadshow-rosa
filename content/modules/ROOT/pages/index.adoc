@@ -21,7 +21,7 @@ These are the *eight* main sections that will be covered:
 
 * _Virtual Machine Management_: In this section we will provide a review of virtual machine management fundamentals, including creating a virtual machine, and modifying it's allotted resources.
 
-* _Migrating Virtual Machines_: In this section, we will use the Migration Toolkit for Virtualization (MTV) to migrate a VM from an existing VMware vSphere environment to OpenShift Virtualization.
+* _Migrating Existing Virtual Machines_: In this section, we will use the Migration Toolkit for Virtualization (MTV) to migrate a VM from an existing VMware vSphere environment to OpenShift Virtualization.
 
 * _Bare Metal Infrastructure Management_: In this section, an administrator will learn how to scale their OpenShift environment by adding in an additional worker node to host virtualized workloads.
 
@@ -33,7 +33,7 @@ These are the *eight* main sections that will be covered:
 
 * _Template and InstanceType Management_: In order to streamline deployment of virtual machines, administrators will often create Templates or define InstanceTypes to ease deployment operations. This section will focus on those processes. 
 
-* _Working with Virtual Machines_: In this section we will perform several day-2 activities with our imported virtual machines, including setting up a load-balancer, and exposing our VM hosted applications through services and routes.
+* _Working with Virtual Machines and Applications_: In this section we will perform several day-2 activities with our imported virtual machines, including setting up a load-balancer, and exposing our VM hosted applications through services and routes.
 
 
 == What is OpenShift Virtualization?
