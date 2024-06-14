@@ -77,16 +77,15 @@ spec:
   storageLocation: oadp-dpa-1
   ttl: 720h0m0s
 ----
-+
-. Click the *Create* button at the bottom.
 
+. Click the *Create* button at the bottom.
 +
 Note that the content of this YAML indicates that any object with the labels *app: fedora02* in the namespace *vmexamples* will be backed up to the location specified in the *DataProtectionApplication* configuration.
 +
 image::module-05-bcdr/05_Create_Backup_YAML.png[link=self, window=blank, width=100%]
 +
 NOTE: If you did not complete the previous section, and you do not have the *fedora02* VM, change the label selectors in the YAML above to match a virtual machine in your inventory.
-+
+
 . Wait until the *Status* column changes to *Completed*. This indicates that the virtual machine has been successfully backed up.
 +
 image::module-05-bcdr/06_Backup_Completed.png[link=self, window=blank, width=100%]
@@ -97,13 +96,12 @@ image::module-05-bcdr/06_Backup_Completed.png[link=self, window=blank, width=100
 . Navigate to *Virtualization* -> *VirtualMachines*, click on the three-dot menu to the right of the *fedora02* VM and select *Delete* from the menu that appears (you may need to switch back to the *vmexamples* project).
 +
 image::module-05-bcdr/07_Delete_VM.png[link=self, window=blank, width=100%]
-+
+
 . When prompted, click the red *Delete* button to confirm deleting the virtual machine.
 +
 image::module-05-bcdr/08_Confirm_Delete.png[link=self, window=blank, width=100%]
-+
-. Go back to *Operators* -> *Installed Operators* and select *OADP Operator* (you may need to switch back to the *openshift-adp* project).
 
+. Go back to *Operators* -> *Installed Operators* and select *OADP Operator* (you may need to switch back to the *openshift-adp* project).
 . Use the horizontal navigation bar to locate the the *Restore* tab, click the *Restore* tab, and then press *Create Restore*.
 +
 image::module-05-bcdr/09_Restore_Tab.png[link=self, window=blank, width=100%]
@@ -128,11 +126,11 @@ spec:
   - restores.velero.io
   restorePVs: true
 ----
-+
+
 . Press the *Create* button at the bottom.
 +
 image::module-05-bcdr/10_Create_Restore_YAML.png[link=self, window=blank, width=100%]
-+
+
 . Wait until you see that the *Status* column changes to *Completed*.
 +
 image::module-05-bcdr/11_Restore_Completed.png[link=self, window=blank, width=100%]

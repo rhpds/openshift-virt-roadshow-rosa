@@ -67,7 +67,7 @@ To help understand the process of mapping resources, such as datastores and port
 . By default you'll land in the *Inventory* view at the top of the navigation tree. Click the *Workloads* icon and expand the navigation tree until you see the folder that matches your username, and the 4 VMs under it. Click the *VMs* tab at the top of the screen to view the VM details.
 +
 image::module-02-mtv/00_Workload_VM_List.png[link=self, window=blank, width=100%]
-+
+
 . Change to the *Networks* view, then expand the tree to view the port group used by the virtual machines. Note that the name is *segment-migrating-to-ocpvirt*.
 +
 image::module-02-mtv/01_vSphere_Network.png[link=self, window=blank, width=100%]
@@ -91,7 +91,7 @@ MTV 2.4 and later are project/namespace aware and do not require administrator p
 . By default, there is a provider called *host* which represents *OpenShift Virtualization* as a target platform.
 +
 image::module-02-mtv/04_MTV_Provider_List.png[link=self, window=blank, width=100%]
-+
+
 . The lab is already configured with the VMWare provider named *vmware* and it is marked as a migration source.
 
 === Create a Migration Plan
@@ -101,11 +101,11 @@ Now that we have reviewed our environment, and have our providers created, it is
 . Navigate in the left menu to *Migration* -> *Plans for virtualization* and press *Create Plan*.
 +
 image::module-02-mtv/14_Create_VMWARE_Plan.png[link=self, window=blank, width=100%]
-+
+
 . You will be asked to select the source provider that you intend to migrate from. Click on the *VMware* tile.
 +
 image::module-02-mtv/16_VMware_Source_Provider.png[link=self, window=blank, width=100%]
-+
+
 . On the next page select the three VMs you would like to move:
 
 * database
@@ -115,7 +115,7 @@ image::module-02-mtv/16_VMware_Source_Provider.png[link=self, window=blank, widt
 . Click *Next*.
 +
 image::module-02-mtv/17_VM_Select_VMWARE_Plan.png[link=self, window=blank, width=100%]
-+
+
 . On the next screen you will be tasked with providing details for your migration plan. Several details will already be filled in for you, but you will have to make a few minor modifications to ensure that the VMs land in the correct namespace, and that the networks and storage options map correctly.
 +
 Please fill in your migration plan with the following values:
@@ -126,41 +126,41 @@ Please fill in your migration plan with the following values:
 * Storage map: *ocs-storagecluster-ceph-rbd*
 +
 NOTE: Both the Network and Storage map will automatically detect the Network and Datastore that the discovered virtual machines currently make use of on the source provider. You will just need to make sure that their respective values are set correctly on the OpenShift side.
-+
+
 . Click *Create migration plan*.
 +
 image::module-02-mtv/18_Create_Migration_Plan.png[link=self, window=blank, width=100%]
-+
+
 . You will be taken to a new screen where you will see that the plan for migration is being made ready.
 +
 image::module-02-mtv/19_Migration_Plan_Unready.png[link=self, window=blank, width=100%]
-+
+
 . After a few moments the plan will become *Ready*, click on the green "Play" button in the center of the window to start the migration process.
 +
 image::module-02-mtv/20_Migration_Plan_Ready.png[link=self, window=blank, width=100%]
-+
+
 . You will be presented with a confirmation box to begin the migration, click on the *Start* button.
 +
 image::module-02-mtv/21_Confirm_Migrate_Start.png[link=self, window=blank, width=100%]
-+
+
 . A progress bar will appear in the center of the screen along with the status of *0 of 3 VMs migrated*.
 +
 image::module-02-mtv/22_VMs_Migrating.png[link=self, window=blank, width=100%]
-+
+
 . Click on the *0 of 3 VMs migrated* link and you will be presented with a page with more details about the migration process.
 +
 image::module-02-mtv/23_VMs_Migrating_Details.png[link=self, window=blank, width=100%]
-+
+
 . You can click the drop-down arrow next to the name of each VM being migrated to get additional details about the stages of the migration process.
 +
 image::module-02-mtv/24_VM_Migration_Stages.png[link=self, window=blank, width=100%]
 +
 *IMPORTANT:* Having many participants performing the same task in parallel in a simulated lab environment can cause this task to perform much slower than in a real environment. For this lab instance we have limited the number of in-flight VMs to 2 at a time. Please be patient with this process as it completes. You may continue with other sections in the roadshow as the migrations complete.
-+
+
 . After several minutes the migration has completed.
 +
 image::module-02-mtv/25_Completed_VMWARE_Plan.png[link=self, window=blank, width=100%]
-+
+
 . The selected VMs have now been migrated and can be started on OpenShift Virtualization.
 
 == Summary
