@@ -44,15 +44,13 @@ image::module-07-tempinst/05_Clone_Details.png[link=self, window=blank, width=10
 +
 image::module-07-tempinst/06_Edit_CPU_Mem.png[link=self, window=blank, width=100%]
 
-////
-. Navigate to the *Network Interfaces* tab, to the right of the *default* interface, select the three-dot menu and the edit option.
-+
-image::module-07-tempinst/07_Edit_Network.png[link=self, window=blank, width=100%]
+// . Navigate to the *Network Interfaces* tab, to the right of the *default* interface, select the three-dot menu and the edit option.
+// +
+// image::module-07-tempinst/07_Edit_Network.png[link=self, window=blank, width=100%]
 
-. When the *Edit network interface* menu appears, set the *Network* value to the *vmexamples/vlan0* network, and click the *Save* button.
-+
-image::module-07-tempinst/08_Edit_Net_Int.png[link=self, window=blank, width=100%]
-////
+// . When the *Edit network interface* menu appears, set the *Network* value to the *vmexamples/vlan0* network, and click the *Save* button.
+// +
+// image::module-07-tempinst/08_Edit_Net_Int.png[link=self, window=blank, width=100%]
 
 . Next click on the *Scripts* tab at the top, and in the section called *Cloud-init* click the *Edit* button.
 +
