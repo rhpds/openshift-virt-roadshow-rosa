@@ -123,7 +123,7 @@ Please fill in your migration plan with the following values:
 * Plan name: *move-webapp-vmware*
 * Target namespace: *vmexamples*
 * Network map: *Pod Networking*
-* Storage map: *ocs-storagecluster-ceph-rbd*
+* Storage map: *ocs-external-storagecluster-ceph-rbd*
 +
 NOTE: Both the Network and Storage map will automatically detect the Network and Datastore that the discovered virtual machines currently make use of on the source provider. You will just need to make sure that their respective values are set correctly on the OpenShift side.
 
