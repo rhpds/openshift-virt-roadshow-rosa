@@ -44,6 +44,7 @@ image::module-07-tempinst/05_Clone_Details.png[link=self, window=blank, width=10
 +
 image::module-07-tempinst/06_Edit_CPU_Mem.png[link=self, window=blank, width=100%]
 
+// Commenting out that next section makes the numbers restart at 1... Remove the section later
 // . Navigate to the *Network Interfaces* tab, to the right of the *default* interface, select the three-dot menu and the edit option.
 // +
 // image::module-07-tempinst/07_Edit_Network.png[link=self, window=blank, width=100%]

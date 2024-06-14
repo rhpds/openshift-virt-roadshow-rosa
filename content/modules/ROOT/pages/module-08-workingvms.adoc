@@ -281,7 +281,7 @@ mysql -u root -p -h 192.168.123.202
 ----
 +
 NOTE: Be sure to replace the ip address in the sample above with the address being advertised by MetalLB.
-
++
 When successful, you should be able to login to the database and view the mysql prompt.
 +
 image::module-08-workingvms/26_DB_Login.png[link=self, window=blank, width=100%]
