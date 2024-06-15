@@ -211,10 +211,7 @@ image::module-08-workingvms/17_Route_Navigation.png[link=self, window=blank, wid
 .. *Secure Route*: *Enabled*
 .. *TLS termination*: *Edge*
 +
-
-
 image::module-08-workingvms/18_Create_Route.png[link=self, window=blank, width=100%]
-+
 
 . Navigate to the address shown in *Location* field
 +
