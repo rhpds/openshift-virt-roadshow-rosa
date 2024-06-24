@@ -1,27 +1,21 @@
 ---
 name: modules
-title: Sample Module Title
+title: Experience OpenShift Virtualization
 version: master
 nav:
-  - modules/ROOT/nav.adoc
+- modules/ROOT/nav.adoc
 
 asciidoc:
   attributes:
-    lab_name: Red Hat OpenShift Virtualization Roadshow
+    lab_name: Experience OpenShift Virtualization
     release-version: master
     page-pagination: true
-    my_var: "foo"
-    guid: my-guid
-    ssh_user: devops
-    ssh_password: devops
-    ssh_command: ssh devops@bastion.{guid}.example.opentlc.com
   page-links:
-    - url: https://redhat.com
-      text: Red Hat
-    - url: https://www.redhat.com/en/summit
-      text: Summit
+  - url: https://redhat.com
+    text: Red Hat
+  - url: https://www.redhat.com/en/summit
+    text: Summit
 
   extensions:
-    - ./content/lib/tab-block.js
-    - ./content/lib/remote-include-processor.js
-
+  - ./content/lib/tab-block.js
+  - ./content/lib/remote-include-processor.js

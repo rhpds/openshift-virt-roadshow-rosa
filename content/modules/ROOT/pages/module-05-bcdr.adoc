@@ -2,7 +2,7 @@
 
 == Introduction
 
-Data Protection is a major topic of conversation when it comes to any enterprise workload, and there are no shortage of options currently available for backup and recovery of virtual machines with OpenShift Virtualization. Many of these solutions function in the same manner at which they protect pods in OpenShift. They do this by taking a backup of the virtual machine, or a namespace containing multiple virtual machines and store it remotely in an object storage bucket. These backups usually also include the persistent storage volume, alongside the metadata and custom resources that define the virtual machine. 
+Data Protection is a major topic of conversation when it comes to any enterprise workload, and there are no shortage of options currently available for backup and recovery of virtual machines with OpenShift Virtualization. Many of these solutions function in the same manner at which they protect pods in OpenShift. They do this by taking a backup of the virtual machine, or a namespace containing multiple virtual machines and store it remotely in an object storage bucket. These backups usually also include the persistent storage volume, alongside the metadata and custom resources that define the virtual machine.
 
 Red Hat Solutions Include:
 
@@ -35,11 +35,11 @@ image::module-05-bcdr/01_Overview.png[link=self, window=blank, width=100%]
 +
 image::module-05-bcdr/02_DPA.png[link=self, window=blank, width=100%]
 
-. Click on *oadp-dpa* to see the details of the _DataProtectionApplication_ and then click on the *YAML* button at the top to see how it is configured. 
+. Click on *oadp-dpa* to see the details of the _DataProtectionApplication_ and then click on the *YAML* button at the top to see how it is configured.
 +
 image::module-05-bcdr/03_OADP_YAML.png[link=self, window=blank, width=100%]
 +
-Notice that *OADP* has been configured by adding the *kubevirt* plugin and it has been configured to use the internal object storage bucket provided by *Red Hat OpenShift Data Foundation.
+Notice that *OADP* has been configured by adding the *kubevirt* plugin and it has been configured to use the internal object storage bucket provided by a *Minio* instance running on your cluster.
 
 IMPORTANT: For the sake of convenience our lab is setup to perform the backups to a local object bucket, however in a production environment you would want to ensure that backups are directed to an external storage system, or a cloud-based object storage bucket.
 
@@ -77,16 +77,15 @@ spec:
   storageLocation: oadp-dpa-1
   ttl: 720h0m0s
 ----
-+
-. Click the *Create* button at the bottom.
 
+. Click the *Create* button at the bottom.
 +
 Note that the content of this YAML indicates that any object with the labels *app: fedora02* in the namespace *vmexamples* will be backed up to the location specified in the *DataProtectionApplication* configuration.
 +
 image::module-05-bcdr/05_Create_Backup_YAML.png[link=self, window=blank, width=100%]
 +
-NOTE: If you did not complete the previous storage section, and you do not have the *fedora02* VM, change the label selectors in the YAML above to match a virtual machine in your inventory.
-+
+NOTE: If you did not complete the previous section, and you do not have the *fedora02* VM, change the label selectors in the YAML above to match a virtual machine in your inventory.
+
 . Wait until the *Status* column changes to *Completed*. This indicates that the virtual machine has been successfully backed up.
 +
 image::module-05-bcdr/06_Backup_Completed.png[link=self, window=blank, width=100%]
@@ -94,16 +93,15 @@ image::module-05-bcdr/06_Backup_Completed.png[link=self, window=blank, width=100
 [[restore_backup]]
 == Restore From a Backup
 
-. Navigate to *Virtualization* -> *VirtualMachines*, click on the three-dot menu to the right of the *fedora02* VM and select *Delete* from the menu that appears.
+. Navigate to *Virtualization* -> *VirtualMachines*, click on the three-dot menu to the right of the *fedora02* VM and select *Delete* from the menu that appears (you may need to switch back to the *vmexamples* project).
 +
 image::module-05-bcdr/07_Delete_VM.png[link=self, window=blank, width=100%]
-+
+
 . When prompted, click the red *Delete* button to confirm deleting the virtual machine.
 +
 image::module-05-bcdr/08_Confirm_Delete.png[link=self, window=blank, width=100%]
-+
-. Go back to *Operators* -> *Installed Operators* and select *OADP Operator*. 
 
+. Go back to *Operators* -> *Installed Operators* and select *OADP Operator* (you may need to switch back to the *openshift-adp* project).
 . Use the horizontal navigation bar to locate the the *Restore* tab, click the *Restore* tab, and then press *Create Restore*.
 +
 image::module-05-bcdr/09_Restore_Tab.png[link=self, window=blank, width=100%]
@@ -119,7 +117,7 @@ metadata:
   namespace: openshift-adp
 spec:
   backupName: backup-fedora02
-  includedResources: [] 
+  includedResources: []
   excludedResources:
   - nodes
   - events
@@ -128,20 +126,19 @@ spec:
   - restores.velero.io
   restorePVs: true
 ----
-+
+
 . Press the *Create* button at the bottom.
 +
 image::module-05-bcdr/10_Create_Restore_YAML.png[link=self, window=blank, width=100%]
-+
+
 . Wait until you see that the *Status* column changes to *Completed*.
 +
 image::module-05-bcdr/11_Restore_Completed.png[link=self, window=blank, width=100%]
 
-. Navigate back to *Virtualization* -> *Virtual Machines* and confirm that the *fedora02* virtual machine was restored.
+. Navigate back to *Virtualization* -> *Virtual Machines* and confirm that the *fedora02* virtual machine was restored (in the *vmexamples* project).
 +
 image::module-05-bcdr/12_VM_Restored.png[link=self, window=blank, width=100%]
 
-
-== Summary 
+== Summary
 
 Protecting virtual machines is a critical aspect of a virtualization platform. OpenShift Virtualization provides multiple methods that enable native protection, for example using OADP, or allowing storage and backup partners to integrate their offerings. If you have questions about how to protect virtual machines, please don't hesitate to ask the proctors for the workshop or reach out to your vendor to determine their compatibility with OpenShift Virtualization.
