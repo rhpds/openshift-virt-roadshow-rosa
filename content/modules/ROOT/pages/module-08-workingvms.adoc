@@ -271,11 +271,10 @@ image::module-08-workingvms/24_Database_LB_YAML.png[link=self, window=blank, wid
 image::module-08-workingvms/25_Database_LB_Service_Created.png[link=self, window=blank, width=100%]
 
 . To verify connectivity to the database service via the external IP, use the terminal to the right authenticate to the database at it's exposed LB address with the following credentials
-
 .. *Username*: *root*
 .. *Password*: *R3dh4t1!*
 +
-[source,bash,role=execute]
+[source,sh,role=execute]
 ----
 mysql -u root -p -h 192.168.123.202
 ----

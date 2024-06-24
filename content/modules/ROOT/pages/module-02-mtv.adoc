@@ -1,4 +1,4 @@
-= Migrating Virtual Machines
+= Migrating Existing Virtual Machines
 
 == Introduction
 
