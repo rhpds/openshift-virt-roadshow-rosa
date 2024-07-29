@@ -19,7 +19,7 @@ In this event we will explore many common management activities that virtualizat
 // These are the *eight* main sections that will be covered:
 These are the *six* main sections that will be covered:
 
-* _Virtual Machine Management_: In this section we will provide a review of virtual machine management fundamentals, including creating a virtual machine, and modifying it's allotted resources.
+* _Virtual Machine Management_: In this section we will provide a review of virtual machine management fundamentals, including creating a virtual machine, and modifying its allotted resources.
 
 * _Migrating Existing Virtual Machines_: In this section, we will use the Migration Toolkit for Virtualization (MTV) to migrate a VM from an existing VMware vSphere environment to OpenShift Virtualization.
 

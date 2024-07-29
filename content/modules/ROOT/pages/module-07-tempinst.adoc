@@ -345,7 +345,7 @@ image::module-07-tempinst/30_Left_Menu_Catalog.png[link=self, window=blank, widt
 +
 image::module-07-tempinst/31_Volume_Boot.png[link=self, window=blank, width=100%]
 
-. Next you can select the instance type you would like to use. There are Red Hat provided instance types by default, or you can create your own. If you hover over a provided instance type you can see a description of it's intended use.
+. Next you can select the instance type you would like to use. There are Red Hat provided instance types by default, or you can create your own. If you hover over a provided instance type you can see a description of its intended use.
 +
 image::module-07-tempinst/32_Select_InstanceType.png[link=self, window=blank, width=100%]
 +
@@ -381,4 +381,4 @@ Now all VMs should be in *Stopped* state.
 
 == Summary
 
-In this section we learned how to clone and customize and existing template to create one that can be used for specific workloads like databases. We also learned how to configure one of the existing Windows templates that exists without a boot source, and automate it's installation process, so we can create future templates by cloning the installation PVC that is created with that VM. We also introduced how to make use of instance types to further customize our virtual machines for specific workloads.
+In this section we learned how to clone and customize and existing template to create one that can be used for specific workloads like databases. We also learned how to configure one of the existing Windows templates that exists without a boot source, and automate its installation process, so we can create future templates by cloning the installation PVC that is created with that VM. We also introduced how to make use of instance types to further customize our virtual machines for specific workloads.

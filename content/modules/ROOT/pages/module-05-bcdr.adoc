@@ -23,7 +23,7 @@ In this portion of the lab, we will use OADP to perform a virtual machine backup
 [[review_operator]]
 == Review the OADP Operator
 
-. Navigate in the left menu to *Operators* -> *Installed Operators* and ensure that *All projects* is selected. Type *OADP* in the Name search field and you should be presented with the installed version of the *OADP Operator*. Click on the operator to see it's details.
+. Navigate in the left menu to *Operators* -> *Installed Operators* and ensure that *All projects* is selected. Type *OADP* in the Name search field and you should be presented with the installed version of the *OADP Operator*. Click on the operator to see its details.
 +
 image::module-05-bcdr/00_Left_Menu.png[link=self, window=blank, width=100%]
 
