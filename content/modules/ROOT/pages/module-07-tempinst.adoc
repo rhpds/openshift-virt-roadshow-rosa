@@ -305,6 +305,11 @@ image::module-07-tempinst/23_Edit_Boot_Media.png[link=self, window=blank, width=
 . Select the option for *Use this disk as a boot source*, and click on the *Save* button at the bottom.
 +
 image::module-07-tempinst/24_Boot_Source.png[link=self, window=blank, width=100%]
++
+[NOTE]
+====
+The disk may already be selected as boot source - in that case the checkbox is pre-checked and grayed out. In that case continue without changing anything.
+====
 
 . When you return to the *Disks* tab, click on the *Create VirtualMachine* button at the bottom.
 . The Virtual Machine will start the provisioning process by downloading the ISO image, configuring, and starting the instance.
