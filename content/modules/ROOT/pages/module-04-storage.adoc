@@ -93,7 +93,7 @@ sudo rm -rf /boot/grub2; sudo shutdown -r now
 ----
 +
 . The virtual machine will no longer be able to boot.
-
++
 image::module-04-storage/10_Bootloader_Broken.png[link=self, window=blank, width=100%]
 +
 IMPORTANT: In the previous step, the operating system was shutdown from within the guest. However, OpenShift Virtualization will restart it automatically by default. This behavior can be changed globally or on a per-VM basis.
