@@ -10,6 +10,12 @@ asciidoc:
     lab_name: Experience OpenShift Virtualization
     release-version: master
     page-pagination: true
+    openshift_cluster_console_url: openshift_cluster_console_url
+    openshift_cluster_admin_username: openshift_cluster_admin_username
+    openshift_cluster_admin_password: openshift_cluster_admin_password
+    vcenter_console: vcenter_console
+    vcenter_full_user: vcenter_full_user
+    vcenter_password: vcenter_password
   page-links:
   - url: https://redhat.com
     text: Red Hat
